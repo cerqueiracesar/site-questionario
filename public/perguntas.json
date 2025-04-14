@@ -1,0 +1,632 @@
+[
+    {
+        "id": 1,
+        "question": "Como ligar um smartphone?",
+        "options": [
+        "Apertar o botão de volume",
+        "Apertar e segurar o botão de ligar/desligar",
+        "Tocar na tela três vezes",
+        "Conectar o carregador"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/power-button.png",
+        "explanation": "A maioria dos smartphones é ligada pressionando e segurando o botão de ligar/desligar por alguns segundos até que a tela acenda."
+    },
+    {
+        "id": 2,
+        "question": "O que é um aplicativo (app)?",
+        "options": [
+        "Um tipo de smartphone",
+        "Um programa que executa funções específicas no smartphone",
+        "Um tipo de carregador",
+        "O nome da tela inicial"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/apps-icons.png",
+        "explanation": "Aplicativos (apps) são programas desenvolvidos para realizar tarefas específicas em seu smartphone, como WhatsApp para mensagens, Facebook para redes sociais, ou aplicativos de banco."
+    },
+    {
+        "id": 3,
+        "question": "Como aumentar o volume do seu smartphone?",
+        "options": [
+        "Usando os botões de volume na lateral do aparelho",
+        "Tocando no centro da tela",
+        "Agitando o aparelho",
+        "Falando 'aumentar volume'"
+        ],
+        "correctAnswer": 0,
+        "imageUrl": "images/volume-buttons.png",
+        "explanation": "Os botões de volume ficam geralmente na lateral do smartphone e permitem aumentar ou diminuir o volume de chamadas, músicas e vídeos."
+    },
+    {
+        "id": 4,
+        "question": "O que é a 'tela inicial' de um smartphone?",
+        "options": [
+        "A primeira tela que aparece quando você liga o aparelho pela primeira vez",
+        "A tela principal onde ficam os ícones dos aplicativos",
+        "A tela de bloqueio",
+        "A tela de configurações"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/home-screen.png",
+        "explanation": "A tela inicial é a página principal do seu smartphone, onde você encontra os ícones dos aplicativos e pode personalizar com widgets."
+    },
+    {
+        "id": 5,
+        "question": "Como atender uma chamada telefônica no smartphone?",
+        "options": [
+        "Agitar o telefone",
+        "Apertar o botão de volume",
+        "Deslizar o dedo na tela ou tocar no botão de atender",
+        "Colocar o telefone no ouvido"
+        ],
+        "correctAnswer": 2,
+        "imageUrl": "images/answer-call.png",
+        "explanation": "Quando o telefone toca, você pode atender deslizando o ícone na direção indicada ou tocando no botão verde de atender."
+    },
+    {
+        "id": 6,
+        "question": "O que é Wi-Fi?",
+        "options": [
+        "Um tipo de smartphone",
+        "Uma tecnologia que permite conectar-se à internet sem fio",
+        "Um aplicativo de mensagens",
+        "O nome da assistente virtual"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/wifi-icon.png",
+        "explanation": "Wi-Fi é uma tecnologia que permite conectar seu dispositivo à internet sem usar cabos, através de redes sem fio disponíveis em casas, escritórios e locais públicos."
+    },
+    {
+        "id": 7,
+        "question": "Como tirar uma foto com o smartphone?",
+        "options": [
+        "Abrir o aplicativo de câmera e tocar no botão de captura",
+        "Agitar o telefone",
+        "Dizer 'tirar foto'",
+        "Apertar os botões de volume simultaneamente"
+        ],
+        "correctAnswer": 0,
+        "imageUrl": "images/camera-app.png",
+        "explanation": "Para tirar fotos, abra o aplicativo de câmera (geralmente com ícone de câmera) e toque no botão circular na parte inferior da tela."
+    },
+    {
+        "id": 8,
+        "question": "O que é um 'toque' na tela do smartphone?",
+        "options": [
+        "Um som que o telefone faz",
+        "Uma música",
+        "Uma ação de pressionar brevemente a tela com o dedo",
+        "Um tipo de mensagem"
+        ],
+        "correctAnswer": 2,
+        "imageUrl": "images/touch-screen.png",
+        "explanation": "Um toque é quando você pressiona brevemente a tela com o dedo para selecionar algo, como um aplicativo ou botão."
+    },
+    {
+        "id": 9,
+        "question": "Como carregar a bateria do smartphone?",
+        "options": [
+        "Deixar o telefone desligado por algumas horas",
+        "Conectar o carregador à tomada e ao smartphone",
+        "Colocar o telefone no modo avião",
+        "Reiniciar o aparelho"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/charging-phone.png",
+        "explanation": "Para carregar seu smartphone, conecte o carregador a uma tomada elétrica e depois conecte o cabo ao seu telefone pela entrada na parte inferior."
+    },
+    {
+        "id": 10,
+        "question": "O que é um ícone na tela do smartphone?",
+        "options": [
+        "Uma pequena imagem que representa um aplicativo ou função",
+        "Um tipo de mensagem",
+        "Uma notificação",
+        "O nome do fabricante do telefone"
+        ],
+        "correctAnswer": 0,
+        "imageUrl": "images/app-icons.png",
+        "explanation": "Ícones são pequenas imagens que representam aplicativos ou funções. Ao tocar neles, você abre o aplicativo ou executa a função correspondente."
+    },
+    {
+        "id": 11,
+        "question": "O que é um aplicativo de mensagens?",
+        "options": [
+        "Um aplicativo para tirar fotos",
+        "Um aplicativo para enviar e receber mensagens de texto",
+        "Um aplicativo para fazer ligações",
+        "Um aplicativo para navegar na internet"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/messaging-apps.png",
+        "explanation": "Aplicativos de mensagens como WhatsApp, Telegram e Messenger permitem enviar e receber mensagens de texto, áudio, fotos e vídeos pela internet."
+    },
+    {
+        "id": 12,
+        "question": "Como instalar um novo aplicativo no smartphone?",
+        "options": [
+        "Reiniciar o telefone",
+        "Acessar a loja de aplicativos, buscar o app desejado e tocar em 'Instalar'",
+        "Ligar para o suporte técnico",
+        "Não é possível instalar novos aplicativos"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/app-store.png",
+        "explanation": "Para instalar novos aplicativos, abra a Play Store (Android) ou App Store (iPhone), busque o aplicativo desejado e toque em 'Instalar' ou 'Obter'."
+    },
+    {
+        "id": 13,
+        "question": "O que é o 'modo avião' no smartphone?",
+        "options": [
+        "Um modo que permite usar o telefone durante voos",
+        "Um modo que desativa todas as conexões sem fio do aparelho",
+        "Um aplicativo de viagens",
+        "Um modo que economiza bateria"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/airplane-mode.png",
+        "explanation": "O modo avião desativa todas as conexões sem fio (celular, Wi-Fi, Bluetooth), sendo útil durante voos ou quando você quer economizar bateria."
+    },
+    {
+        "id": 14,
+        "question": "Como ajustar o brilho da tela do smartphone?",
+        "options": [
+        "Nas configurações do aparelho",
+        "Não é possível ajustar o brilho",
+        "Reiniciando o telefone",
+        "Ligando para o suporte técnico"
+        ],
+        "correctAnswer": 0,
+        "imageUrl": "images/brightness-settings.png",
+        "explanation": "O brilho pode ser ajustado nas configurações ou deslizando para baixo na tela (área de notificações) e usando o controle deslizante de brilho."
+    },
+    {
+        "id": 15,
+        "question": "O que é um contato na agenda do telefone?",
+        "options": [
+        "Uma pessoa que você conhece pessoalmente",
+        "Um registro com informações como nome e número de telefone",
+        "Uma mensagem recebida",
+        "Um tipo de aplicativo"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/contacts-app.png",
+        "explanation": "Um contato é um registro na agenda do telefone com informações como nome, número de telefone, e-mail e outros dados de uma pessoa."
+    },
+    {
+        "id": 16,
+        "question": "Como fazer uma pesquisa na internet usando o smartphone?",
+        "options": [
+        "Não é possível acessar a internet pelo smartphone",
+        "Usando um aplicativo de navegador e digitando o que deseja buscar",
+        "Ligando para um serviço de informações",
+        "Enviando uma mensagem de texto"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/mobile-browser.png",
+        "explanation": "Use um navegador como Chrome ou Safari, digite o que deseja buscar na barra de pesquisa e toque no botão de busca ou 'Enter' no teclado."
+    },
+    {
+        "id": 17,
+        "question": "O que é uma notificação no smartphone?",
+        "options": [
+        "Um tipo de aplicativo",
+        "Um alerta ou aviso sobre alguma atividade ou evento",
+        "Uma ligação perdida",
+        "O nome do fabricante do telefone"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/notifications.png",
+        "explanation": "Notificações são alertas que aparecem na tela para informar sobre novas mensagens, chamadas, atualizações de aplicativos ou outros eventos."
+    },
+    {
+        "id": 18,
+        "question": "Como silenciar o smartphone?",
+        "options": [
+        "Desligando o aparelho",
+        "Usando o botão de silenciar ou ajustando o volume para zero",
+        "Removendo o chip",
+        "Cobrindo o alto-falante com a mão"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/mute-button.png",
+        "explanation": "Para silenciar, use o botão de volume para baixar até zero ou use o interruptor de silenciar (em iPhones) ou as opções de som nas configurações rápidas."
+    },
+    {
+        "id": 19,
+        "question": "O que é um aplicativo de navegação?",
+        "options": [
+        "Um aplicativo para navegar na internet",
+        "Um aplicativo que mostra mapas e fornece direções",
+        "Um aplicativo para organizar contatos",
+        "Um aplicativo para tirar fotos"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/maps-app.png",
+        "explanation": "Aplicativos de navegação como Google Maps ou Waze mostram mapas e fornecem direções para chegar a um destino, seja a pé, de carro ou transporte público."
+    },
+    {
+        "id": 20,
+        "question": "Como fazer uma chamada de vídeo no smartphone?",
+        "options": [
+        "Não é possível fazer chamadas de vídeo em smartphones",
+        "Usando um aplicativo específico como WhatsApp, FaceTime ou Google Meet",
+        "Ligando para o número e falando 'vídeo'",
+        "Enviando uma mensagem solicitando uma chamada de vídeo"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/video-call.png",
+        "explanation": "Use aplicativos como WhatsApp, FaceTime (iPhone) ou Google Meet. Abra o contato desejado e toque no ícone de câmera ou chamada de vídeo."
+    },
+    {
+        "id": 21,
+        "question": "O que é um sistema operacional no smartphone?",
+        "options": [
+        "Um aplicativo de música",
+        "O programa principal que permite o funcionamento do aparelho",
+        "Um tipo de carregador",
+        "A parte física do celular"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/operating-system.png",
+        "explanation": "O sistema operacional, como Android ou iOS, é o software principal que controla todas as funções do smartphone e permite o uso dos aplicativos."
+    },
+    {
+        "id": 22,
+        "question": "Como enviar uma mensagem de voz no WhatsApp?",
+        "options": [
+        "Gravando um vídeo e enviando",
+        "Escrevendo 'áudio' na mensagem",
+        "Tocando no ícone de microfone e segurando enquanto fala",
+        "Usando o viva-voz"
+        ],
+        "correctAnswer": 2,
+        "imageUrl": "images/voice-message.png",
+        "explanation": "Para enviar uma mensagem de voz no WhatsApp, toque e segure o ícone de microfone na conversa, fale e solte quando terminar."
+    },
+    {
+        "id": 23,
+        "question": "O que significa atualizar um aplicativo?",
+        "options": [
+        "Desinstalar o aplicativo",
+        "Instalar um novo aplicativo",
+        "Melhorar a versão do app com correções e novidades",
+        "Apagar os dados do app"
+        ],
+        "correctAnswer": 2,
+        "imageUrl": "images/update-app.png",
+        "explanation": "Atualizar um aplicativo significa instalar uma nova versão com melhorias, correções de erros e novas funções. Isso pode ser feito pela loja de apps."
+    },
+    {
+        "id": 24,
+        "question": "O que é armazenamento interno no smartphone?",
+        "options": [
+        "O espaço físico onde guardamos o aparelho",
+        "A quantidade de bateria",
+        "O espaço disponível para guardar fotos, vídeos e apps",
+        "O número de contatos salvos"
+        ],
+        "correctAnswer": 2,
+        "imageUrl": "images/storage-space.png",
+        "explanation": "O armazenamento interno é o espaço disponível no celular para guardar arquivos como fotos, vídeos, documentos e aplicativos."
+    },
+    {
+        "id": 25,
+        "question": "Como saber o nível da bateria do smartphone?",
+        "options": [
+        "Consultando um aplicativo bancário",
+        "Observando o ícone da bateria no canto da tela",
+        "Apertando o botão de volume",
+        "Reiniciando o celular"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/battery-icon.png",
+        "explanation": "O nível da bateria é indicado por um ícone geralmente no canto superior da tela. Pode mostrar um número (%) ou uma barra indicando a carga restante."
+    },
+    {
+        "id": 26,
+        "question": "Para que serve o Bluetooth no smartphone?",
+        "options": [
+        "Aumentar o volume do celular",
+        "Conectar-se a dispositivos próximos sem fio",
+        "Carregar o telefone mais rápido",
+        "Melhorar a qualidade das fotos"
+        ],
+        "correctAnswer": 1,
+        "imageUrl": "images/bluetooth.png",
+        "explanation": "Bluetooth permite conectar o smartphone a outros dispositivos próximos, como fones de ouvido, caixas de som e carros, sem o uso de fios."
+    },
+    {
+      "id": 27,
+      "question": "O que é um aplicativo de autenticação?",
+      "options": [
+        "Um aplicativo para tirar fotos",
+        "Um aplicativo que gera códigos de segurança para acessar contas online",
+        "Um aplicativo para fazer ligações",
+        "Um aplicativo para enviar mensagens"
+      ],
+      "correctAnswer": 1,
+      "imageUrl": "images/authenticator-app.png",
+      "explanation": "Aplicativos de autenticação como Google Authenticator geram códigos temporários que servem como segunda camada de segurança para suas contas online."
+    },
+    {
+      "id": 28,
+      "question": "Como transferir arquivos entre smartphones?",
+      "options": [
+        "Não é possível transferir arquivos entre smartphones",
+        "Usando Bluetooth, NFC, aplicativos de compartilhamento ou serviços de nuvem",
+        "Imprimindo e digitalizando novamente",
+        "Apenas levando os aparelhos a uma loja autorizada"
+      ],
+      "correctAnswer": 1,
+      "imageUrl": "images/file-transfer.png",
+      "explanation": "Transfira arquivos usando Bluetooth, aplicativos como AirDrop (iPhone) ou Nearby Share (Android), ou serviços de nuvem como Google Drive."
+    },
+    {
+      "id": 29,
+      "question": "O que é uma VPN no contexto de smartphones?",
+      "options": [
+        "Um tipo de bateria",
+        "Uma rede privada virtual que protege sua conexão à internet",
+        "Um aplicativo de redes sociais",
+        "Um tipo de carregador rápido"
+      ],
+      "correctAnswer": 1,
+      "imageUrl": "images/vpn-app.png",
+      "explanation": "VPN (Rede Privada Virtual) criptografa sua conexão com a internet, protegendo seus dados e permitindo acessar conteúdos com restrições geográficas."
+    },
+    {
+      "id": 30,
+      "question": "Como gerenciar o uso de dados móveis no smartphone?",
+      "options": [
+        "Não é possível controlar o uso de dados",
+        "Através das configurações do aparelho, monitorando e limitando o uso por aplicativo",
+        "Desligando o telefone quando não estiver em uso",
+        "Usando apenas Wi-Fi e nunca dados móveis"
+      ],
+      "correctAnswer": 1,
+      "imageUrl": "images/data-usage.png",
+      "explanation": "Nas configurações, encontre 'Uso de dados' ou similar para monitorar quanto cada aplicativo consome e definir limites de uso."
+    },      
+    {
+        "id": 31,
+        "question": "Como ligar um computador?",
+        "options": ["Apertando o botão de ligar/desligar", "Conectando o monitor", "Abrindo a tampa", "Conectando o teclado"],
+        "correctAnswer": 0,
+        "imageUrl": "/images/power-button-pc.png",
+        "explanation": "Para ligar o computador, pressione o botão de ligar/desligar, geralmente na parte frontal do gabinete ou no laptop."
+    },
+    {
+        "id": 32,
+        "question": "O que é um mouse?",
+        "options": ["Um pequeno animal", "Um dispositivo que controla o cursor na tela", "Um tipo de programa", "Um tipo de teclado"],
+        "correctAnswer": 1,
+        "imageUrl": "images/mouse.png",
+        "explanation": "O mouse é um dispositivo que você move sobre uma superfície para controlar o cursor (seta) na tela do computador."
+    },
+    {
+        "id": 33,
+        "question": "O que é a área de trabalho (desktop)?",
+        "options": ["A mesa onde fica o computador", "A tela principal do computador onde ficam os ícones", "O gabinete do computador", "O teclado e o mouse"],
+        "correctAnswer": 1,
+        "imageUrl": "images/desktop.png",
+        "explanation": "A área de trabalho é a tela principal que você vê após ligar o computador, onde ficam os ícones de programas e arquivos."
+    },
+    {
+        "id": 34,
+        "question": "Como abrir um programa no computador?",
+        "options": ["Clicando duas vezes no ícone do programa", "Desligando e ligando o computador", "Pressionando qualquer tecla", "Movendo o mouse em círculos"],
+        "correctAnswer": 0,
+        "imageUrl": "images/program-icon.png",
+        "explanation": "Para abrir um programa, dê um clique duplo (dois cliques rápidos) no ícone do programa na área de trabalho ou menu iniciar."
+    },
+    {
+        "id": 35,
+        "question": "O que é um ícone no computador?",
+        "options": ["Uma pequena imagem que representa um programa ou arquivo", "Um tipo de vírus", "O botão de ligar", "A marca do computador"],
+        "correctAnswer": 0,
+        "imageUrl": "/images/desktop-icons.png",
+        "explanation": "Ícones são pequenas imagens que representam programas, arquivos ou pastas. Clicando neles, você abre o item correspondente."
+    },
+    {
+        "id": 36,
+        "question": "Como aumentar o volume do computador?",
+        "options": ["Clicando no ícone de alto-falante e ajustando o controle deslizante", "Reiniciando o computador", "Desconectando e reconectando os alto-falantes", "Não é possível ajustar o volume"],
+        "correctAnswer": 0,
+        "imageUrl": "images/volume-control.png",
+        "explanation": "Clique no ícone de alto-falante na barra de tarefas (geralmente no canto inferior direito) e ajuste o controle deslizante para cima."
+    },
+    {
+        "id": 37,
+        "question": "O que é um navegador de internet?",
+        "options": ["Um programa para organizar arquivos", "Um programa que permite acessar páginas na internet", "Um tipo de antivírus", "Um dispositivo de hardware"],
+        "correctAnswer": 1,
+        "imageUrl": "images/web-browser.png",
+        "explanation": "Um navegador (como Chrome, Firefox ou Edge) é um programa que permite acessar e visualizar páginas da internet."
+    },
+    {
+        "id": 38,
+        "question": "Como desligar corretamente o computador?",
+        "options": ["Desconectando o cabo de energia", "Pressionando o botão de ligar/desligar rapidamente", "Clicando no menu Iniciar e selecionando 'Desligar'", "Fechando todos os programas"],
+        "correctAnswer": 2,
+        "imageUrl": "images/shutdown-button.png",
+        "explanation": "Para desligar corretamente, clique no menu Iniciar (canto inferior esquerdo) e selecione a opção 'Desligar'. Isso evita perda de dados."
+    },
+    {
+        "id": 39,
+        "question": "O que é um arquivo?",
+        "options": ["Um programa de computador", "Um documento, imagem ou outro tipo de dado armazenado no computador", "Um tipo de vírus", "Um componente de hardware"],
+        "correctAnswer": 1,
+        "imageUrl": "images/file-icon.png",
+        "explanation": "Um arquivo é um conjunto de dados armazenados no computador, como documentos, fotos, vídeos ou músicas."
+    },
+    {
+        "id": 40,
+        "question": "Como criar uma nova pasta no computador?",
+        "options": ["Clicando com o botão direito do mouse e selecionando 'Nova pasta'", "Pressionando o botão de ligar", "Reiniciando o computador", "Não é possível criar novas pastas"],
+        "correctAnswer": 0,
+        "imageUrl": "images/new-folder.png",
+        "explanation": "Clique com o botão direito do mouse em um espaço vazio da área de trabalho ou dentro de uma pasta, e selecione 'Nova pasta' no menu."
+    },
+    {
+        "id": 41,
+        "question": "O que é um processador de texto?",
+        "options": ["Um componente de hardware que processa texto", "Um programa para escrever e editar documentos", "Um tipo de teclado", "Um dispositivo de impressão"],
+        "correctAnswer": 1,
+        "imageUrl": "images/word-processor.png",
+        "explanation": "Um processador de texto (como Microsoft Word ou Google Docs) é um programa para criar, editar e formatar documentos de texto."
+    },
+    {
+        "id": 42,
+        "question": "Como copiar um texto no computador?",
+        "options": ["Selecionando o texto e pressionando Ctrl+C", "Imprimindo o texto e digitando novamente", "Tirando uma foto da tela", "Não é possível copiar textos"],
+        "correctAnswer": 0,
+        "imageUrl": "images/copy-paste.png",
+        "explanation": "Selecione o texto com o mouse, pressione Ctrl+C para copiar e Ctrl+V para colar em outro local."
+    },
+    {
+        "id": 43,
+        "question": "O que é um e-mail?",
+        "options": ["Um tipo de vírus", "Um correio eletrônico, uma mensagem enviada pela internet", "Um programa de computador", "Um tipo de arquivo"],
+        "correctAnswer": 1,
+        "imageUrl": "images/email.png",
+        "explanation": "E-mail (correio eletrônico) é um sistema de mensagens enviadas pela internet, como cartas digitais com endereços únicos."
+    },
+    {
+        "id": 44,
+        "question": "Como fazer uma pesquisa na internet?",
+        "options": ["Ligando para um serviço de informações", "Abrindo um navegador, acessando um site de busca e digitando o que deseja encontrar", "Perguntando ao computador em voz alta", "Não é possível pesquisar na internet"],
+        "correctAnswer": 1,
+        "imageUrl": "images/search-engine.png",
+        "explanation": "Abra um navegador, acesse um site de busca como Google, digite o que deseja pesquisar na barra de pesquisa e pressione Enter."
+    },
+    {
+        "id": 45,
+        "question": "O que é uma senha forte?",
+        "options": ["Uma senha curta e fácil de lembrar", "Uma senha longa com letras, números e caracteres especiais", "O nome de um familiar", "A data de nascimento"],
+        "correctAnswer": 1,
+        "imageUrl": "images/strong-password.png",
+        "explanation": "Uma senha forte combina letras maiúsculas e minúsculas, números e símbolos, sendo difícil de adivinhar mas fácil para você lembrar."
+    },
+    {
+        "id": 46,
+        "question": "Como anexar um arquivo a um e-mail?",
+        "options": ["Não é possível enviar arquivos por e-mail", "Clicando no botão 'Anexar' e selecionando o arquivo desejado", "Imprimindo o arquivo e enviando pelo correio", "Mencionando o nome do arquivo na mensagem"],
+        "correctAnswer": 1,
+        "imageUrl": "images/email-attachment.png",
+        "explanation": "Ao escrever um e-mail, clique no ícone de clipe de papel (anexar) e selecione o arquivo que deseja enviar junto com a mensagem."
+    },
+    {
+        "id": 47,
+        "question": "O que é uma planilha eletrônica?",
+        "options": ["Um tipo de teclado", "Um programa para criar e manipular tabelas de dados", "Um componente de hardware", "Um tipo de monitor"],
+        "correctAnswer": 1,
+        "imageUrl": "images/spreadsheet.png",
+        "explanation": "Planilhas eletrônicas (como Excel) são programas para organizar dados em tabelas, fazer cálculos e criar gráficos."
+    },
+    {
+        "id": 48,
+        "question": "Como salvar um documento no computador?",
+        "options": ["Pressionando Ctrl+S ou clicando em 'Salvar' no menu", "Imprimindo o documento", "Fechando o programa sem salvar", "Não é possível salvar documentos"],
+        "correctAnswer": 0,
+        "imageUrl": "images/save-document.png",
+        "explanation": "Para salvar um documento, pressione Ctrl+S ou clique no menu 'Arquivo' e depois em 'Salvar'. Escolha um local e nome para o arquivo."
+    },
+    {
+        "id": 49,
+        "question": "O que é um link?",
+        "options": ["Um tipo de vírus", "Um elemento clicável que leva a outra página ou recurso", "Um tipo de arquivo", "Um componente de hardware"],
+        "correctAnswer": 1,
+        "imageUrl": "images/hyperlink.png",
+        "explanation": "Um link (ou hiperlink) é um texto ou imagem clicável que, quando acionado, leva a outra página da web, arquivo ou seção do documento."
+    },
+    {
+        "id": 50,
+        "question": "Como imprimir um documento?",
+        "options": ["Salvando o documento em um pendrive", "Pressionando Ctrl+P ou selecionando 'Imprimir' no menu", "Enviando o documento por e-mail", "Não é possível imprimir documentos diretamente do computador"],
+        "correctAnswer": 1,
+        "imageUrl": "images/print-dialog.png",
+        "explanation": "Para imprimir, pressione Ctrl+P ou clique em 'Arquivo' e depois 'Imprimir'. Selecione a impressora e as opções desejadas."
+    },
+    {
+        "id": 51,
+        "question": "O que é um antivírus?",
+        "options": ["Um vírus que protege o computador", "Um programa que detecta e remove ameaças do computador", "Um dispositivo de segurança", "Um tipo de cabo de rede"],
+        "correctAnswer": 1,
+        "imageUrl": "images/antivirus.png",
+        "explanation": "Um antivírus é um programa que ajuda a proteger seu computador contra vírus, malwares e outras ameaças digitais."
+    },
+    {
+        "id": 52,
+        "question": "Como enviar um e-mail?",
+        "options": ["Clicando em 'Nova mensagem', escrevendo o texto, adicionando o destinatário e clicando em 'Enviar'", "Digitando no Word", "Ligando para o provedor de internet", "Desligando o computador"],
+        "correctAnswer": 0,
+        "imageUrl": "images/send-email.png",
+        "explanation": "Para enviar um e-mail, abra o programa de e-mail, clique em 'Nova mensagem', escreva o conteúdo e clique em 'Enviar'."
+    },
+    {
+        "id": 53,
+        "question": "O que é Wi-Fi?",
+        "options": ["Um tipo de cabo de rede", "Um programa de edição de texto", "Uma tecnologia que permite conectar dispositivos à internet sem fio", "Uma marca de celular"],
+        "correctAnswer": 2,
+        "imageUrl": "images/wifi.png",
+        "explanation": "Wi-Fi é uma tecnologia que permite conectar dispositivos à internet ou a redes locais sem o uso de cabos."
+    },
+    {
+        "id": 54,
+        "question": "Como atualizar um programa no computador?",
+        "options": ["Clicando em 'Atualizar' no próprio programa ou nas configurações do sistema", "Desinstalando e reinstalando", "Comprando um novo computador", "Não é possível atualizar programas"],
+        "correctAnswer": 0,
+        "imageUrl": "images/software-update.png",
+        "explanation": "A maioria dos programas possui uma opção de 'Atualizar' ou pode ser atualizada pelas configurações do sistema ou loja de aplicativos."
+    },
+    {
+        "id": 55,
+        "question": "O que é a nuvem (cloud)?",
+        "options": ["Um tipo de pasta do computador", "Um armazenamento de dados na internet", "Um tipo de vírus", "Uma função do teclado"],
+        "correctAnswer": 1,
+        "imageUrl": "images/cloud-storage.png",
+        "explanation": "A nuvem permite armazenar arquivos e informações em servidores na internet, acessíveis de qualquer lugar com conexão."
+    },
+    {
+        "id": 56,
+        "question": "Como proteger suas contas online?",
+        "options": ["Usando senhas fortes e não compartilhando com ninguém", "Utilizando a mesma senha para tudo", "Desligando o Wi-Fi", "Ignorando mensagens de segurança"],
+        "correctAnswer": 0,
+        "imageUrl": "images/security-password.png",
+        "explanation": "Proteja suas contas com senhas fortes, autenticação em dois fatores e evitando clicar em links suspeitos."
+    },
+    {
+        "id": 57,
+        "question": "O que significa fazer download?",
+        "options": ["Excluir um programa", "Enviar um arquivo", "Baixar um arquivo da internet para seu computador", "Reiniciar o computador"],
+        "correctAnswer": 2,
+        "imageUrl": "images/download.png",
+        "explanation": "Fazer download significa transferir arquivos da internet para seu dispositivo, como músicas, vídeos ou documentos."
+    },
+    {
+        "id": 58,
+        "question": "O que é um sistema operacional?",
+        "options": ["O gabinete do computador", "O programa principal que gerencia o funcionamento do computador", "Um antivírus", "Um teclado virtual"],
+        "correctAnswer": 1,
+        "imageUrl": "images/operating-system.png",
+        "explanation": "O sistema operacional (como Windows, Linux ou macOS) controla o hardware do computador e permite o uso de programas."
+    },
+    {
+        "id": 59,
+        "question": "Como evitar vírus no computador?",
+        "options": ["Evitando clicar em links suspeitos e mantendo o antivírus atualizado", "Visitando todos os sites possíveis", "Instalando vários antivírus ao mesmo tempo", "Desligando o computador"],
+        "correctAnswer": 0,
+        "imageUrl": "images/avoid-virus.png",
+        "explanation": "Evite vírus mantendo o antivírus ativo, atualizando o sistema e evitando downloads ou sites desconhecidos."
+    },
+    {
+        "id": 60,
+        "question": "O que é um atalho no computador?",
+        "options": ["Um tipo de vírus", "Um ícone que permite acesso rápido a programas ou arquivos", "Um programa escondido", "Um erro do sistema"],
+        "correctAnswer": 1,
+        "imageUrl": "images/shortcut.png",
+        "explanation": "Atalhos são ícones ou combinações de teclas que facilitam o acesso a arquivos, pastas ou funções do sistema."
+    }
+]
