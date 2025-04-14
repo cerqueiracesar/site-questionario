@@ -1,0 +1,160 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  padding: 30px 15px;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #f0f;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 20px #ff00ff80;
+  backdrop-filter: blur(8px);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.etiqueta {
+  background-color: #ff00cc;
+  color: black;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px #fff;
+  box-shadow: 0 0 8px #ff00cc;
+}
+
+.header h1 {
+  font-size: 40px;
+  color: #00ffff;
+  margin: 20px 0 10px;
+  text-shadow: 2px 2px #ff00ff;
+}
+
+.header h2 {
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+}
+
+/* Detalhes */
+.detalhes p {
+  font-size: 22px;
+  margin: 10px 0;
+  color: #ffccff;
+}
+
+/* Conteúdo */
+.conteudo {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.conteudo h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #00ffff;
+  text-shadow: 1px 1px #ff00ff;
+}
+
+.conteudo ul {
+  margin-left: 20px;
+  list-style-type: square;
+}
+
+.conteudo li {
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.bonus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 6px solid #00ffff;
+  padding: 15px;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 20px;
+  box-shadow: inset 0 0 10px #00ffff;
+}
+
+/* CTA - Botão */
+.cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta button {
+  font-size: 24px;
+  padding: 16px 50px;
+  background: linear-gradient(145deg, #ff00ff, #00ffff);
+  color: black;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 12px #00ffffaa;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cta button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px #ff00ff;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+
+  .header h1 {
+    font-size: 30px;
+  }
+
+  .header h2 {
+    font-size: 20px;
+  }
+
+  .cta button {
+    width: 100%;
+    font-size: 22px;
+    padding: 14px;
+  }
+}
+
+.lista-com-icones {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .lista-com-icones li {
+    margin: 10px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .lista-com-icones i {
+    color: #ff00ff;
+    margin-right: 12px;
+    font-size: 20px;
+  }
+  

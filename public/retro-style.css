@@ -1,0 +1,287 @@
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #0f0c29;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 30px 15px;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  /* Scanlines */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  /* Glitch background animation */
+  @keyframes glitch-bg {
+    0% { background-position: 0 0; }
+    20% { background-position: 10px 5px; }
+    40% { background-position: -10px -5px; }
+    60% { background-position: 5px -10px; }
+    80% { background-position: -5px 10px; }
+    100% { background-position: 0 0; }
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff00ff;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    z-index: 2;
+    animation: glitch-bg 6s infinite ease-in-out;
+    box-shadow: 0 0 20px #00ffff80;
+    backdrop-filter: blur(6px);
+  }
+  
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .tag {
+    background-color: #ff00cc;
+    color: black;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px #fff;
+    box-shadow: 0 0 8px #ff00cc;
+  }
+  
+  .header h1 {
+    font-size: 40px;
+    color: #00ffff;
+    margin: 20px 0;
+    text-shadow: 2px 2px #ff00ff;
+  }
+  
+  /* LED flicker effect */
+  .title {
+    font-size: 26px;
+    color: #ffccff;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #ff00ff;
+    animation: flicker 2s infinite;
+  }
+  
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+    60% { opacity: 0.9; }
+    70% { opacity: 0.6; }
+  }
+  
+  /* Info */
+  .info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  
+  p {
+    margin: 15px 0;
+  }
+  
+  .content {
+    margin-top: 30px;
+  }
+  
+  .content ul {
+    margin-left: 20px;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .content li {
+    margin: 12px 0;
+    padding-left: 28px;
+    position: relative;
+  }
+  
+  .content li::before {
+    content: "🕹️";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  /* Bonus destaque */
+  .bonus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 6px solid #00ffff;
+    padding: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 20px;
+    box-shadow: inset 0 0 10px #00ffff;
+  }
+  
+  /* Botão com neon pulse */
+  .cta {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .cta button {
+    font-size: 24px;
+    padding: 16px 50px;
+    background: transparent;
+    color: #fff;
+    border: 3px solid #ff00ff;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    text-shadow: 0 0 5px #fff;
+    box-shadow: 0 0 15px #ff00ff;
+    animation: pulseNeon 2s infinite;
+    z-index: 2;
+  }
+  
+  @keyframes pulseNeon {
+    0% {
+      box-shadow: 0 0 10px #ff00ff;
+    }
+    50% {
+      box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
+    }
+    100% {
+      box-shadow: 0 0 10px #ff00ff;
+    }
+  }
+  
+  .cta button:hover {
+    background: #ff00ff;
+    color: black;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 600px) {
+    body {
+      font-size: 18px;
+    }
+  
+    .header h1 {
+      font-size: 28px;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    .cta button {
+      width: 100%;
+      font-size: 20px;
+      padding: 14px;
+    }
+
+    .glitch {
+        color: #00ffff;
+        font-size: 40px;
+        position: relative;
+        display: inline-block;
+        text-shadow: 2px 2px #ff00ff;
+        animation: glitch-animation 2s infinite linear;
+      }
+      
+      .glitch::before,
+      .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        color: #00ffff;
+        overflow: hidden;
+        clip: rect(0, 900px, 0, 0);
+      }
+      
+      .glitch::before {
+        text-shadow: 2px 0 red;
+        animation: glitch-top 2s infinite linear;
+      }
+      
+      .glitch::after {
+        text-shadow: -2px 0 blue;
+        animation: glitch-bottom 2s infinite linear;
+      }
+      
+      @keyframes glitch-animation {
+        0% { transform: none; }
+        20% { transform: translate(-2px, 2px); }
+        40% { transform: translate(-2px, -2px); }
+        60% { transform: translate(2px, 2px); }
+        80% { transform: translate(2px, -2px); }
+        100% { transform: none; }
+      }
+      
+      @keyframes glitch-top {
+        0% { clip: rect(0, 9999px, 0, 0); }
+        10% { clip: rect(10px, 9999px, 50px, 0); }
+        20% { clip: rect(85px, 9999px, 100px, 0); }
+        30% { clip: rect(45px, 9999px, 65px, 0); }
+        100% { clip: rect(0, 9999px, 0, 0); }
+      }
+      
+      @keyframes glitch-bottom {
+        0% { clip: rect(0, 9999px, 0, 0); }
+        10% { clip: rect(30px, 9999px, 60px, 0); }
+        20% { clip: rect(60px, 9999px, 90px, 0); }
+        30% { clip: rect(40px, 9999px, 70px, 0); }
+        100% { clip: rect(0, 9999px, 0, 0); }
+      }
+      
+      .background-shapes {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 0;
+      }
+      
+      .shape {
+        fill: #ff00ff;
+        opacity: 0.1;
+        animation: blink 4s infinite ease-in-out;
+      }
+      
+      @keyframes blink {
+        0%, 100% { opacity: 0.1; }
+        50% { opacity: 0.6; }
+      }
+      
+  }
+  
