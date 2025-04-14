@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz de Inclusão Digital</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #f5f5f5; color: #333; }
+    h1 { text-align: center; }
+    .quiz-container { max-width: 700px; margin: auto; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+    .question { margin-bottom: 1rem; }
+    .options label { display: block; margin: 0.5rem 0; }
+    .image { max-width: 100%; margin: 1rem 0; }
+    .hidden { display: none; }
+    .result { font-weight: bold; margin-top: 1rem; }
+    input, button, select { padding: 0.5rem; font-size: 1rem; margin-top: 0.5rem; width: 100%; }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Quiz de Inclusão Digital</h1>
+    <form id="userForm">
+      <input type="text" placeholder="Nome" name="nome" required />
+      <input type="text" placeholder="Cidade" name="cidade" required />
+      <input type="email" placeholder="Email (opcional)" name="email" />
+      <button type="submit">Iniciar Quiz</button>
+    </form>
+
+    <div id="quiz" class="hidden"></div>
+    <div id="result" class="hidden"></div>
+  </div>
+
+  <script>
+    const perguntas = [];
+
+    function getRandomQuestions(array, num) {
+      const shuffled = array.sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, num);
+    }
+
+    const form = document.getElementById('userForm');
+    const quizDiv = document.getElementById('quiz');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      form.classList.add('hidden');
+      const selectedQuestions = getRandomQuestions(perguntas, 10);
+      renderQuiz(selectedQuestions);
+    });
+
+    function renderQuiz(questions) {
+      quizDiv.innerHTML = '';
+      questions.forEach((q, i) => {
+        const div = document.createElement('div');
+        div.className = 'question';
+        div.innerHTML = `
+          <p><strong>${i + 1}. ${q.question}</strong></p>
+          ${q.imageUrl ? `<img src="${q.imageUrl}" class="image" alt="Imagem da pergunta" />` : ''}
+          ${q.options.map((opt, idx) => `
+            <label>
+              <input type="radio" name="q${i}" value="${idx}" required />
+              ${opt}
+            </label>`).join('')}
+        `;
+        quizDiv.appendChild(div);
+      });
+
+      const submitBtn = document.createElement('button');
+      submitBtn.textContent = 'Enviar Respostas';
+      submitBtn.type = 'button';
+      submitBtn.onclick = () => checkAnswers(questions);
+      quizDiv.appendChild(submitBtn);
+      quizDiv.classList.remove('hidden');
+    }
+
+    function checkAnswers(questions) {
+      let correct = 0;
+      questions.forEach((q, i) => {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selected && parseInt(selected.value) === q.correctAnswer) correct++;
+      });
+
+      quizDiv.classList.add('hidden');
+      resultDiv.classList.remove('hidden');
+      resultDiv.innerHTML = `<p class="result">Você acertou ${correct} de ${questions.length} perguntas.</p>`;
+    }
+  </script>
+</body>
+</html>

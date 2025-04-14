@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulário de Inscrição</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Formulário de Inscrição</h1>
+    <form id="questionario">
+      <fieldset>
+        <legend>1.1. Qual a sua idade?</legend>
+        <label><input type="radio" name="idade" value="menos18" /> Menos de 18 anos</label><br />
+        <label><input type="radio" name="idade" value="18a29" /> 18 a 29 anos</label><br />
+        <label><input type="radio" name="idade" value="30a45" /> 30 a 45 anos</label><br />
+        <label><input type="radio" name="idade" value="46a60" /> 46 a 60 anos</label><br />
+        <label><input type="radio" name="idade" value="mais60" /> Mais de 60 anos</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>1.2. Qual o seu nível de escolaridade?</legend>
+        <label><input type="radio" name="escolaridade" value="fundincomp" /> Ensino fundamental incompleto</label><br />
+        <label><input type="radio" name="escolaridade" value="fundcompl" /> Ensino fundamental completo</label><br />
+        <label><input type="radio" name="escolaridade" value="medincomp" /> Ensino médio incompleto</label><br />
+        <label><input type="radio" name="escolaridade" value="medcompl" /> Ensino médio completo</label><br />
+        <label><input type="radio" name="escolaridade" value="supincomp" /> Ensino superior incompleto</label><br />
+        <label><input type="radio" name="escolaridade" value="supcompl" /> Ensino superior completo</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>1.3. Você possui acesso regular a dispositivos digitais?</legend>
+        <label><input type="radio" name="acesso" value="pc_cel" /> Sim, computador e celular</label><br />
+        <label><input type="radio" name="acesso" value="cel" /> Sim, apenas celular</label><br />
+        <label><input type="radio" name="acesso" value="pc" /> Sim, apenas computador</label><br />
+        <label><input type="radio" name="acesso" value="nao" /> Não tenho acesso regular</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2.1. Com que frequência você utiliza a internet?</legend>
+        <label><input type="radio" name="frequencia" value="todo_dia" /> Todos os dias</label><br />
+        <label><input type="radio" name="frequencia" value="algumas_sem" /> Algumas vezes por semana</label><br />
+        <label><input type="radio" name="frequencia" value="algumas_mes" /> Algumas vezes por mês</label><br />
+        <label><input type="radio" name="frequencia" value="raro" /> Raramente</label><br />
+        <label><input type="radio" name="frequencia" value="nunca" /> Nunca</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2.2. Quais dessas ferramentas digitais você já utiliza?</legend>
+        <label><input type="checkbox" name="ferramentas" value="redes" /> Redes sociais</label><br />
+        <label><input type="checkbox" name="ferramentas" value="email" /> E-mail</label><br />
+        <label><input type="checkbox" name="ferramentas" value="mensagem" /> Aplicativos de mensagem</label><br />
+        <label><input type="checkbox" name="ferramentas" value="produtividade" /> Ferramentas de produtividade</label><br />
+        <label><input type="checkbox" name="ferramentas" value="banco" /> Serviços bancários online</label><br />
+        <label><input type="checkbox" name="ferramentas" value="nenhuma" /> Nenhuma das opções</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2.3. Como você avalia seu conhecimento sobre tecnologia digital?</legend>
+        <label><input type="radio" name="avaliacao" value="1" /> 1</label>
+        <label><input type="radio" name="avaliacao" value="2" /> 2</label>
+        <label><input type="radio" name="avaliacao" value="3" /> 3</label>
+        <label><input type="radio" name="avaliacao" value="4" /> 4</label>
+        <label><input type="radio" name="avaliacao" value="5" /> 5</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2.4. Você já ouviu falar sobre Inteligência Artificial (IA)?</legend>
+        <label><input type="radio" name="ia" value="entendo" /> Sim, e entendo como funciona</label><br />
+        <label><input type="radio" name="ia" value="pouco" /> Sim, mas sei pouco sobre o assunto</label><br />
+        <label><input type="radio" name="ia" value="nao" /> Não</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2.5. O que você espera aprender com esta atividade?</legend>
+        <textarea name="expectativas" rows="4" cols="50" placeholder="Digite aqui..."></textarea>
+      </fieldset>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>
