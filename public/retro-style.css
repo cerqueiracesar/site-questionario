@@ -1,4 +1,4 @@
-/* Reset e base */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -6,56 +6,22 @@
   }
   
   body {
-    font-family: 'Courier New', Courier, monospace;
-    background: #0f0c29;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    font-family: "Courier New", Courier, monospace;
     color: #ffffff;
-    font-size: 20px;
     padding: 30px 15px;
-    overflow-x: hidden;
-    position: relative;
-  }
-  
-  /* Scanlines */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: repeating-linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.03),
-      rgba(255, 255, 255, 0.03) 1px,
-      transparent 1px,
-      transparent 3px
-    );
-    z-index: 1;
-    pointer-events: none;
-  }
-  
-  /* Glitch background animation */
-  @keyframes glitch-bg {
-    0% { background-position: 0 0; }
-    20% { background-position: 10px 5px; }
-    40% { background-position: -10px -5px; }
-    60% { background-position: 5px -10px; }
-    80% { background-position: -5px 10px; }
-    100% { background-position: 0 0; }
+    font-size: 20px;
   }
   
   .container {
     max-width: 800px;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.5);
-    border: 2px solid #ff00ff;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #f0f;
     border-radius: 20px;
     padding: 30px;
-    position: relative;
-    z-index: 2;
-    animation: glitch-bg 6s infinite ease-in-out;
-    box-shadow: 0 0 20px #00ffff80;
-    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px #ff00ff80;
+    backdrop-filter: blur(8px);
   }
   
   /* Header */
@@ -64,7 +30,7 @@
     margin-bottom: 30px;
   }
   
-  .tag {
+  .etiqueta {
     background-color: #ff00cc;
     color: black;
     display: inline-block;
@@ -79,64 +45,46 @@
   .header h1 {
     font-size: 40px;
     color: #00ffff;
-    margin: 20px 0;
+    margin: 20px 0 10px;
     text-shadow: 2px 2px #ff00ff;
   }
   
-  /* LED flicker effect */
-  .title {
-    font-size: 26px;
-    color: #ffccff;
-    text-align: center;
-    margin-bottom: 20px;
-    text-shadow: 0 0 5px #ff00ff;
-    animation: flicker 2s infinite;
+  .header h2 {
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 1px 1px #000;
   }
   
-  @keyframes flicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-    60% { opacity: 0.9; }
-    70% { opacity: 0.6; }
-  }
-  
-  /* Info */
-  .info {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 20px;
+  /* Detalhes */
+  .detalhes p {
     font-size: 22px;
+    margin: 10px 0;
+    color: #ffccff;
   }
   
-  p {
-    margin: 15px 0;
-  }
-  
-  .content {
+  /* Conteúdo */
+  .conteudo {
     margin-top: 30px;
+    text-align: left;
   }
   
-  .content ul {
+  .conteudo h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #00ffff;
+    text-shadow: 1px 1px #ff00ff;
+  }
+  
+  .conteudo ul {
     margin-left: 20px;
-    list-style-type: none;
-    padding-left: 0;
+    list-style-type: square;
   }
   
-  .content li {
-    margin: 12px 0;
-    padding-left: 28px;
-    position: relative;
+  .conteudo li {
+    margin-bottom: 12px;
+    color: #ffffff;
   }
   
-  .content li::before {
-    content: "🕹️";
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  
-  /* Bonus destaque */
   .bonus {
     background-color: rgba(255, 255, 255, 0.1);
     border-left: 6px solid #00ffff;
@@ -147,7 +95,7 @@
     box-shadow: inset 0 0 10px #00ffff;
   }
   
-  /* Botão com neon pulse */
+  /* CTA - Botão */
   .cta {
     text-align: center;
     margin-top: 40px;
@@ -156,34 +104,19 @@
   .cta button {
     font-size: 24px;
     padding: 16px 50px;
-    background: transparent;
-    color: #fff;
-    border: 3px solid #ff00ff;
+    background: linear-gradient(145deg, #ff00ff, #00ffff);
+    color: black;
+    border: none;
     border-radius: 16px;
     cursor: pointer;
     font-weight: bold;
-    position: relative;
-    text-shadow: 0 0 5px #fff;
-    box-shadow: 0 0 15px #ff00ff;
-    animation: pulseNeon 2s infinite;
-    z-index: 2;
-  }
-  
-  @keyframes pulseNeon {
-    0% {
-      box-shadow: 0 0 10px #ff00ff;
-    }
-    50% {
-      box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
-    }
-    100% {
-      box-shadow: 0 0 10px #ff00ff;
-    }
+    box-shadow: 0 0 12px #00ffffaa;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
   }
   
   .cta button:hover {
-    background: #ff00ff;
-    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 24px #ff00ff;
   }
   
   /* Responsivo */
@@ -193,95 +126,429 @@
     }
   
     .header h1 {
-      font-size: 28px;
+      font-size: 30px;
     }
   
-    .title {
+    .header h2 {
       font-size: 20px;
     }
   
     .cta button {
       width: 100%;
-      font-size: 20px;
+      font-size: 22px;
       padding: 14px;
     }
-
-    .glitch {
-        color: #00ffff;
-        font-size: 40px;
-        position: relative;
-        display: inline-block;
-        text-shadow: 2px 2px #ff00ff;
-        animation: glitch-animation 2s infinite linear;
-      }
-      
-      .glitch::before,
-      .glitch::after {
-        content: attr(data-text);
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        color: #00ffff;
-        overflow: hidden;
-        clip: rect(0, 900px, 0, 0);
-      }
-      
-      .glitch::before {
-        text-shadow: 2px 0 red;
-        animation: glitch-top 2s infinite linear;
-      }
-      
-      .glitch::after {
-        text-shadow: -2px 0 blue;
-        animation: glitch-bottom 2s infinite linear;
-      }
-      
-      @keyframes glitch-animation {
-        0% { transform: none; }
-        20% { transform: translate(-2px, 2px); }
-        40% { transform: translate(-2px, -2px); }
-        60% { transform: translate(2px, 2px); }
-        80% { transform: translate(2px, -2px); }
-        100% { transform: none; }
-      }
-      
-      @keyframes glitch-top {
-        0% { clip: rect(0, 9999px, 0, 0); }
-        10% { clip: rect(10px, 9999px, 50px, 0); }
-        20% { clip: rect(85px, 9999px, 100px, 0); }
-        30% { clip: rect(45px, 9999px, 65px, 0); }
-        100% { clip: rect(0, 9999px, 0, 0); }
-      }
-      
-      @keyframes glitch-bottom {
-        0% { clip: rect(0, 9999px, 0, 0); }
-        10% { clip: rect(30px, 9999px, 60px, 0); }
-        20% { clip: rect(60px, 9999px, 90px, 0); }
-        30% { clip: rect(40px, 9999px, 70px, 0); }
-        100% { clip: rect(0, 9999px, 0, 0); }
-      }
-      
-      .background-shapes {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        pointer-events: none;
-        z-index: 0;
-      }
-      
-      .shape {
-        fill: #ff00ff;
-        opacity: 0.1;
-        animation: blink 4s infinite ease-in-out;
-      }
-      
-      @keyframes blink {
-        0%, 100% { opacity: 0.1; }
-        50% { opacity: 0.6; }
-      }
-      
+  }
+  
+  .lista-com-icones {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .lista-com-icones li {
+    margin: 10px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .lista-com-icones i {
+    color: #ff00ff;
+    margin-right: 12px;
+    font-size: 20px;
+  }
+  
+  /* Estilo para o Quiz - Versão Simplificada */
+  .quiz-section {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .quiz-title {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  
+  .quiz-button {
+    background-color: #000;
+    color: #fff;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), inset 0 0 5px rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .quiz-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+    transition: 0.5s;
+  }
+  
+  .quiz-button:hover {
+    background-color: #000;
+    color: #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), inset 0 0 10px rgba(0, 255, 255, 0.4);
+    text-shadow: 0 0 5px #00ffff;
+  }
+  
+  .quiz-button:hover::before {
+    left: 100%;
+  }
+  
+  .quiz-icon {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .quiz-text {
+    letter-spacing: 1px;
+  }
+  
+  @media (max-width: 600px) {
+    .quiz-button {
+      font-size: 16px;
+      padding: 8px 20px;
+    }
+  }
+  
+  /* Glitch effect */
+  .glitch {
+    position: relative;
+    color: #00ffff;
+  }
+  
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00ff;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+  }
+  
+  .glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00ffff;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim2 2.5s infinite linear alternate-reverse;
+  }
+  
+  @keyframes glitch-anim {
+    0% {
+      clip: rect(24px, 550px, 90px, 0);
+    }
+    20% {
+      clip: rect(62px, 550px, 130px, 0);
+    }
+    40% {
+      clip: rect(58px, 550px, 14px, 0);
+    }
+    60% {
+      clip: rect(91px, 550px, 46px, 0);
+    }
+    80% {
+      clip: rect(24px, 550px, 23px, 0);
+    }
+    100% {
+      clip: rect(25px, 550px, 73px, 0);
+    }
+  }
+  
+  @keyframes glitch-anim2 {
+    0% {
+      clip: rect(85px, 550px, 140px, 0);
+    }
+    20% {
+      clip: rect(24px, 550px, 67px, 0);
+    }
+    40% {
+      clip: rect(33px, 550px, 92px, 0);
+    }
+    60% {
+      clip: rect(18px, 550px, 13px, 0);
+    }
+    80% {
+      clip: rect(62px, 550px, 78px, 0);
+    }
+    100% {
+      clip: rect(27px, 550px, 140px, 0);
+    }
+  }
+  
+  /* Estilos para o Quiz */
+  .quiz-container {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 20px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  }
+  
+  .quiz-container-titulo {
+    color: #00ffff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-shadow: 2px 2px #ff00ff;
+  }
+  
+  .quiz-content {
+    margin-bottom: 30px;
+  }
+  
+  .pergunta {
+    margin-bottom: 30px;
+  }
+  
+  .pergunta-numero {
+    color: #ff00ff;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: right;
+  }
+  
+  .pergunta h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-shadow: 1px 1px #000;
+  }
+  
+  .pergunta-imagem {
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border: 2px solid #ff00ff;
+    border-radius: 8px;
+  }
+  
+  .opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .opcao {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+  
+  .opcao:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+  }
+  
+  .opcao input {
+    margin-right: 15px;
+  }
+  
+  .opcao label {
+    cursor: pointer;
+    font-size: 18px;
+    flex: 1;
+  }
+  
+  .opcao.correta {
+    background: rgba(0, 255, 0, 0.2);
+    border: 1px solid #00ff00;
+  }
+  
+  .opcao.incorreta {
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid #ff0000;
+  }
+  
+  .feedback {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    font-size: 18px;
+    display: none;
+  }
+  
+  .feedback.correto {
+    display: block;
+    background: rgba(0, 255, 0, 0.1);
+    border-left: 4px solid #00ff00;
+  }
+  
+  .feedback.incorreto {
+    display: block;
+    background: rgba(255, 0, 0, 0.1);
+    border-left: 4px solid #ff0000;
+  }
+  
+  .feedback.erro {
+    display: block;
+    background: rgba(255, 255, 0, 0.1);
+    border-left: 4px solid #ffff00;
+  }
+  
+  .botao-responder {
+    background: linear-gradient(145deg, #ff00ff, #00ffff);
+    color: black;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .botao-responder:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+  }
+  
+  .botao-voltar {
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: 1px solid #ff00ff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .botao-voltar:hover {
+    background: rgba(255, 0, 255, 0.2);
+    color: #00ffff;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 20px;
+    color: #00ffff;
+    font-size: 20px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  
+  .error {
+    background: rgba(255, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #ff0000;
+  }
+  
+  .resultado-final {
+    text-align: center;
+  }
+  
+  .resultado-final h2 {
+    color: #00ffff;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-shadow: 2px 2px #ff00ff;
+  }
+  
+  .pontuacao {
+    margin: 30px 0;
+  }
+  
+  .pontuacao p {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .pontuacao-barra {
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+  }
+  
+  .pontuacao-progresso {
+    height: 100%;
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+  }
+  
+  .pontuacao-percentual {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ffff;
+  }
+  
+  .mensagem-final {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+  
+  .botao-reiniciar {
+    background: linear-gradient(145deg, #00ffff, #ff00ff);
+    color: black;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .botao-reiniciar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+  }
+  
+  .hidden {
+    display: none;
   }
   
