@@ -54,7 +54,25 @@
     font-size: 24px;
     color: #fff;
     text-shadow: 1px 1px #000;
+    margin-bottom: 3px; /* Ajuste esse valor conforme necessário */
   }
+  
+  /* Estilizando o header para o fundo sobresair */
+.header {
+  padding: 5px; /* Adiciona um pouco de espaço interno para o fundo aparecer */
+  border-radius: 10px; /* Opcional: arredonda as bordas do header */
+  margin-bottom: -10px;
+}
+
+/* Rotacionando a imagem da andorinha */
+.header img {
+  transform: rotate(90deg); /* Rotaciona a imagem 90 graus no sentido horário */
+  max-width: 250px; /* Ajuste o tamanho conforme necessário para evitar que a imagem fique muito grande após a rotação */
+  display: block; /* Garante que a imagem fique centralizada */
+  margin: 0 auto; /* Centraliza a imagem horizontalmente */
+  margin-top: -4px; /* Valores negativos podem aproximar mais. */
+  margin-bottom: -10px;
+}
   
   /* Detalhes */
   .detalhes {
