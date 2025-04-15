@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const recursosConteudo = document.getElementById("recursosConteudo")
   const iniciarQuiz = document.getElementById("iniciarQuiz")
 
-  // Configuração da data de liberação do feedback ALTERARR!!!!
-  const dataLiberacao = new Date(2025, 3, 14, 19, 30, 0) // 25 de abril de 2025 às 19:30
+  // Configuração da data de liberação do feedback
+  const dataLiberacao = new Date(2025, 3, 25, 19, 30, 0) // 25 de abril de 2025 às 19:30
   const feedbackSection = document.getElementById("feedbackSection")
   const feedbackButton = document.getElementById("feedbackButton")
   const feedbackLink = document.getElementById("feedbackLink")
@@ -17,9 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let intervalId
 
   // Redirecionar para o formulário de inscrição
+  if (btnInscrever) {
   btnInscrever.addEventListener("click", () => {
     window.location.href = "formulario.html"
   })
+  }
 
   // Mostrar/esconder recursos adicionais
   btnMostrarRecursos.addEventListener("click", () => {
@@ -45,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Redirecionar para o quiz ou iniciar o quiz na mesma página
-    // Aqui você pode adicionar sua lógica para iniciar o quiz
     window.location.href = "quiz.html"
   })
 
@@ -111,18 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Adicionar evento de clique ao botão de feedback
   feedbackLink.addEventListener("click", (e) => {
-    if (feedbackButton.disabled) {
+    if (feedbackButton.disabled || !localStorage.getItem("dadosInscricao")) {
       e.preventDefault()
-      alert("A avaliação ainda não está disponível. Por favor, aguarde até o final da atividade.")
-    } else {
-      // Verificar se o usuário já se inscreveu
-      const dadosInscricao = localStorage.getItem("dadosInscricao")
-
-      if (!dadosInscricao) {
-        e.preventDefault()
-        alert("Por favor, inscreva-se primeiro para acessar a avaliação.")
-        window.location.href = "formulario.html"
-      }
-    }
+      alert("A avaliação ainda não está disponível ou você não está inscrito.")
+      window.location.href = "formulario.html"
+    }    
   })
 })

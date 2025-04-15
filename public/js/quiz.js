@@ -7,13 +7,7 @@ const TOTAL_PERGUNTAS_QUIZ = 11 // Número de perguntas que serão selecionadas 
 
 // Quando o documento estiver carregado
 document.addEventListener("DOMContentLoaded", () => {
-  // Seleciona o botão de iniciar quiz
-  const botaoIniciarQuiz = document.getElementById("iniciarQuiz")
-
-  // Adiciona um evento de clique ao botão
-  botaoIniciarQuiz.addEventListener("click", () => {
-    iniciarQuiz()
-  })
+  iniciarQuiz() 
 })
 
 // Função para iniciar o quiz
