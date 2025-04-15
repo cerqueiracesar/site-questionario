@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Desvendando a IA na Terceira Idade</title>
-  <link rel="stylesheet" href="retro-style.css" />
+  <title>Nova Era Digital - IA na Terceira Idade</title>
+  <link rel="stylesheet" href="landing-style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Adicione a referência ao script quiz.js -->
-  <script src="quiz.js" defer></script>
+  <script src="landing.js" defer></script>
 </head>
 <body>    
   <main class="container">
@@ -18,38 +17,278 @@
     </header>
 
     <section class="detalhes">
-      <p><strong>📅 Data:</strong> 25 de abril de 2025</p>
-      <p><strong>🕕 Horário:</strong> 18h</p>
-      <p><strong>📍 Plataforma:</strong> Zoom</p>
+      <div class="detalhe-item">
+        <i class="fas fa-calendar-alt detalhe-icon"></i>
+        <p><strong>Data:</strong> 25 de abril de 2025</p>
+      </div>
+      <div class="detalhe-item">
+        <i class="fas fa-clock detalhe-icon"></i>
+        <p><strong>Horário:</strong> 18h</p>
+      </div>
+      <div class="detalhe-item">
+        <i class="fas fa-video detalhe-icon"></i>
+        <p><strong>Plataforma:</strong> Zoom</p>
+      </div>
     </section>
 
     <section class="conteudo">
       <h3>O que você vai aprender:</h3>
       <ul class="lista-com-icones">
-        <li>O que é Inteligência Artificial? <i class="fas fa-robot"></i></li>
-        <li>IA no seu dia a dia <i class="fas fa-microchip"></i></li>
-        <li>Aplicações práticas <i class="fas fa-brain"></i></li>
-        <li>Oportunidades de carreira <i class="fas fa-user-graduate"></i></li>
+        <li><i class="fas fa-robot"></i> O que é Inteligência Artificial?</li>
+        <li><i class="fas fa-microchip"></i> IA no seu dia a dia</li>
+        <li><i class="fas fa-brain"></i> Aplicações práticas</li>
+        <li><i class="fas fa-user-graduate"></i> Oportunidades de carreira</li>
       </ul>      
-      <break></break>
-      <p><strong>Público-alvo:</strong> Curiosos, estudantes, profissionais — não precisa ter conhecimento prévio!</p>
+      
+      <p class="publico-alvo"><strong>Público-alvo:</strong> Curiosos, estudantes, profissionais — não precisa ter conhecimento prévio!</p>
 
-      <div class="bonus">🎁 Material complementar + certificado para participantes!</div>
+      <div class="bonus">
+        <i class="fas fa-gift bonus-icon"></i>
+        <p>Material complementar + certificado para participantes!</p>
+      </div>
     </section>
 
     <div class="cta">
-      <a href="formulario.html">
-        <button>INSCREVA-SE AGORA</button>
-      </a>
-    </div>
-
-    <div class="quiz-section">
-      <h3 class="quiz-title">TESTE SEUS CONHECIMENTOS</h3>
-      <button class="quiz-button" id="iniciarQuiz">
-        <span class="quiz-icon"><i class="fas fa-question-circle"></i></span>
-        <span class="quiz-text">INICIAR QUIZ</span>
+      <button id="btnInscrever" class="btn-inscrever">
+        <span class="btn-text">INSCREVA-SE AGORA</span>
+        <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
       </button>
     </div>
+
+    <div class="recursos-adicionais">
+      <button id="btnMostrarRecursos" class="btn-recursos">
+        <span>Recursos adicionais</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      
+      <div id="recursosConteudo" class="recursos-conteudo hidden">
+        <div class="recurso-item">
+          <i class="fas fa-question-circle"></i>
+          <h4>Teste seus conhecimentos</h4>
+          <p>Faça um quiz rápido sobre IA e tecnologia</p>
+          <button id="iniciarQuiz" class="btn-recurso">
+            <span class="btn-icon"><i class="fas fa-play-circle"></i></span>
+            <span class="btn-text">INICIAR QUIZ</span>
+          </button>
+        </div>
+        
+        <div class="recurso-item">
+          <i class="fas fa-star"></i>
+          <h4>Avaliação da atividade</h4>
+          <p>Disponível após a conclusão da aula</p>
+          <div id="feedbackSection" class="feedback-section">
+            <div class="feedback-countdown" id="feedbackCountdown">
+              <i class="fas fa-lock feedback-lock-icon"></i>
+              <span class="feedback-countdown-text">Disponível em: <span id="countdownTimer">--:--:--</span></span>
+            </div>
+            <a href="avaliacao.html" class="feedback-link" id="feedbackLink">
+              <button class="btn-recurso" disabled id="feedbackButton">
+                <span class="btn-icon"><i class="fas fa-star"></i></span>
+                <span class="btn-text">AVALIAR ATIVIDADE</span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
+
+  <!-- Modal de inscrição -->
+  <div id="inscricaoModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Inscrição para a Aula</h2>
+      <p>Preencha o formulário abaixo para garantir sua vaga:</p>
+      
+      <form id="inscricaoForm" class="formulario">
+        <div class="form-section">
+          <h3>Dados Pessoais</h3>
+          
+          <div class="form-group">
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <h3>Sobre Você</h3>
+          
+          <div class="form-group">
+            <label>Qual a sua idade?</label>
+            <div class="radio-options">
+              <div class="radio-option">
+                <input type="radio" id="idade1" name="idade" value="Menos de 18 anos">
+                <label for="idade1">Menos de 18 anos</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="idade2" name="idade" value="18 a 29 anos">
+                <label for="idade2">18 a 29 anos</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="idade3" name="idade" value="30 a 45 anos">
+                <label for="idade3">30 a 45 anos</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="idade4" name="idade" value="46 a 60 anos">
+                <label for="idade4">46 a 60 anos</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="idade5" name="idade" value="Mais de 60 anos">
+                <label for="idade5">Mais de 60 anos</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>Qual o seu nível de escolaridade?</label>
+            <div class="radio-options">
+              <div class="radio-option">
+                <input type="radio" id="escolaridade1" name="escolaridade" value="Ensino fundamental incompleto">
+                <label for="escolaridade1">Ensino fundamental incompleto</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="escolaridade2" name="escolaridade" value="Ensino fundamental completo">
+                <label for="escolaridade2">Ensino fundamental completo</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="escolaridade3" name="escolaridade" value="Ensino médio incompleto">
+                <label for="escolaridade3">Ensino médio incompleto</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="escolaridade4" name="escolaridade" value="Ensino médio completo">
+                <label for="escolaridade4">Ensino médio completo</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="escolaridade5" name="escolaridade" value="Ensino superior incompleto">
+                <label for="escolaridade5">Ensino superior incompleto</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="escolaridade6" name="escolaridade" value="Ensino superior completo">
+                <label for="escolaridade6">Ensino superior completo</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>Você possui acesso regular a dispositivos digitais?</label>
+            <div class="radio-options">
+              <div class="radio-option">
+                <input type="radio" id="acesso1" name="acesso_digital" value="Sim, computador e celular">
+                <label for="acesso1">Sim, computador e celular</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="acesso2" name="acesso_digital" value="Sim, apenas celular">
+                <label for="acesso2">Sim, apenas celular</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="acesso3" name="acesso_digital" value="Sim, apenas computador">
+                <label for="acesso3">Sim, apenas computador</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="acesso4" name="acesso_digital" value="Não tenho acesso regular">
+                <label for="acesso4">Não tenho acesso regular</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>Com que frequência você utiliza a internet?</label>
+            <div class="radio-options">
+              <div class="radio-option">
+                <input type="radio" id="internet1" name="uso_internet" value="Todos os dias">
+                <label for="internet1">Todos os dias</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="internet2" name="uso_internet" value="Algumas vezes por semana">
+                <label for="internet2">Algumas vezes por semana</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="internet3" name="uso_internet" value="Algumas vezes por mês">
+                <label for="internet3">Algumas vezes por mês</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="internet4" name="uso_internet" value="Raramente">
+                <label for="internet4">Raramente</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="internet5" name="uso_internet" value="Nunca">
+                <label for="internet5">Nunca</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>Como você avalia seu conhecimento sobre tecnologia digital?</label>
+            <div class="rating-container">
+              <div class="rating-opcoes">
+                <div class="rating-opcao">
+                  <input type="radio" id="conhecimento1" name="conhecimento_tecnologia" value="1">
+                  <label for="conhecimento1">1<span class="rating-label">Muito baixo</span></label>
+                </div>
+                <div class="rating-opcao">
+                  <input type="radio" id="conhecimento2" name="conhecimento_tecnologia" value="2">
+                  <label for="conhecimento2">2</label>
+                </div>
+                <div class="rating-opcao">
+                  <input type="radio" id="conhecimento3" name="conhecimento_tecnologia" value="3">
+                  <label for="conhecimento3">3</label>
+                </div>
+                <div class="rating-opcao">
+                  <input type="radio" id="conhecimento4" name="conhecimento_tecnologia" value="4">
+                  <label for="conhecimento4">4</label>
+                </div>
+                <div class="rating-opcao">
+                  <input type="radio" id="conhecimento5" name="conhecimento_tecnologia" value="5">
+                  <label for="conhecimento5">5<span class="rating-label">Muito alto</span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="expectativa">O que você espera aprender com esta atividade?</label>
+            <textarea id="expectativa" name="expectativa" rows="3"></textarea>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">
+            <span class="btn-icon"><i class="fas fa-check-circle"></i></span>
+            <span class="btn-text">CONFIRMAR INSCRIÇÃO</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de confirmação -->
+  <div id="confirmacaoModal" class="modal">
+    <div class="modal-content confirmacao-content">
+      <span class="close-modal">&times;</span>
+      <div class="confirmacao-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h2>Inscrição Confirmada!</h2>
+      <p>Sua vaga está garantida para a aula <strong>Nova Era Digital</strong>.</p>
+      <p class="confirmacao-detalhes">
+        <strong>Data:</strong> 25 de abril de 2025<br>
+        <strong>Horário:</strong> 18h<br>
+        <strong>Plataforma:</strong> Zoom
+      </p>
+      <p>Enviamos um e-mail com todas as informações e o link de acesso.</p>
+      <p class="confirmacao-nota">Não esqueça de verificar sua caixa de spam!</p>
+      <button id="btnFecharConfirmacao" class="btn-fechar">ENTENDI</button>
+    </div>
+  </div>
 </body>
 </html>

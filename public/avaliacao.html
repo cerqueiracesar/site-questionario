@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avaliação da Atividade - Nova Era Digital</title>
+  <link rel="stylesheet" href="retro-style.css" />
+  <link rel="stylesheet" href="avaliacao-style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="avaliacao.js" defer></script>
+</head>
+<body>
+  <main class="container formulario-container">
+    <header class="header">
+      <div class="etiqueta">NOVA ERA DIGITAL</div>
+      <h1 class="glitch" data-text="AVALIAÇÃO">AVALIAÇÃO</h1>
+      <h2>Sua opinião é muito importante para nós!</h2>
+    </header>
+
+    <form id="avaliacaoForm" class="formulario">
+      <!-- Seção 3: Avaliação da Atividade -->
+      <section class="secao-formulario">
+        <h3 class="secao-titulo"><span class="numero-secao">3</span> Avaliação da Atividade</h3>
+        
+        <div class="pergunta">
+          <label class="pergunta-texto">3.1. Como você avalia o conteúdo apresentado?</label>
+          <div class="rating-container">
+            <div class="rating-opcoes">
+              <div class="rating-opcao">
+                <input type="radio" id="conteudo1" name="avaliacao_conteudo" value="1" required>
+                <label for="conteudo1">1️⃣<span class="rating-label">Ruim</span></label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="conteudo2" name="avaliacao_conteudo" value="2">
+                <label for="conteudo2">2️⃣</label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="conteudo3" name="avaliacao_conteudo" value="3">
+                <label for="conteudo3">3️⃣</label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="conteudo4" name="avaliacao_conteudo" value="4">
+                <label for="conteudo4">4️⃣</label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="conteudo5" name="avaliacao_conteudo" value="5">
+                <label for="conteudo5">5️⃣<span class="rating-label">Excelente</span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pergunta">
+          <label class="pergunta-texto">3.2. As atividades foram acessíveis e fáceis de entender?</label>
+          <div class="rating-container">
+            <div class="rating-opcoes">
+              <div class="rating-opcao">
+                <input type="radio" id="acessibilidade1" name="avaliacao_acessibilidade" value="1" required>
+                <label for="acessibilidade1">1️⃣<span class="rating-label">Nada acessível</span></label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="acessibilidade2" name="avaliacao_acessibilidade" value="2">
+                <label for="acessibilidade2">2️⃣</label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="acessibilidade3" name="avaliacao_acessibilidade" value="3">
+                <label for="acessibilidade3">3️⃣</label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="acessibilidade4" name="avaliacao_acessibilidade" value="4">
+                <label for="acessibilidade4">4️⃣</label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="acessibilidade5" name="avaliacao_acessibilidade" value="5">
+                <label for="acessibilidade5">5️⃣<span class="rating-label">Muito acessível</span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pergunta">
+          <label class="pergunta-texto">3.3. O que você mais gostou na atividade?</label>
+          <textarea name="gostou" rows="3" class="texto-area" placeholder="Digite sua resposta aqui..."></textarea>
+        </div>
+
+        <div class="pergunta">
+          <label class="pergunta-texto">3.4. O que poderia ser melhorado?</label>
+          <textarea name="melhorias" rows="3" class="texto-area" placeholder="Digite sua resposta aqui..."></textarea>
+        </div>
+      </section>
+
+      <!-- Seção 4: Impacto da Atividade -->
+      <section class="secao-formulario">
+        <h3 class="secao-titulo"><span class="numero-secao">4</span> Impacto da Atividade</h3>
+        
+        <div class="pergunta">
+          <label class="pergunta-texto">4.1. Após essa atividade, como você avalia seu conhecimento sobre tecnologia digital?</label>
+          <div class="rating-container">
+            <div class="rating-opcoes">
+              <div class="rating-opcao">
+                <input type="radio" id="conhecimento1" name="avaliacao_conhecimento" value="1" required>
+                <label for="conhecimento1">1️⃣<span class="rating-label">Muito baixo</span></label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="conhecimento2" name="avaliacao_conhecimento" value="2">
+                <label for="conhecimento2">2️⃣</label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="conhecimento3" name="avaliacao_conhecimento" value="3">
+                <label for="conhecimento3">3️⃣</label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="conhecimento4" name="avaliacao_conhecimento" value="4">
+                <label for="conhecimento4">4️⃣</label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="conhecimento5" name="avaliacao_conhecimento" value="5">
+                <label for="conhecimento5">5️⃣<span class="rating-label">Muito alto</span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pergunta">
+          <label class="pergunta-texto">4.2. Você sente mais confiança para utilizar ferramentas digitais no seu dia a dia?</label>
+          <div class="checkbox-opcoes">
+            <div class="checkbox-opcao">
+              <input type="radio" id="confianca1" name="confianca" value="Sim, muito mais" required>
+              <label for="confianca1">Sim, muito mais</label>
+            </div>
+            <div class="checkbox-opcao">
+              <input type="radio" id="confianca2" name="confianca" value="Sim, um pouco mais">
+              <label for="confianca2">Sim, um pouco mais</label>
+            </div>
+            <div class="checkbox-opcao">
+              <input type="radio" id="confianca3" name="confianca" value="Não houve mudanças">
+              <label for="confianca3">Não houve mudanças</label>
+            </div>
+            <div class="checkbox-opcao">
+              <input type="radio" id="confianca4" name="confianca" value="Não, continuo com dificuldades">
+              <label for="confianca4">Não, continuo com dificuldades</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="pergunta">
+          <label class="pergunta-texto">4.3. Você pretende continuar aprendendo sobre inclusão digital?</label>
+          <div class="checkbox-opcoes">
+            <div class="checkbox-opcao">
+              <input type="radio" id="continuar1" name="continuar" value="Sim, quero aprender mais sobre tecnologia" required>
+              <label for="continuar1">Sim, quero aprender mais sobre tecnologia</label>
+            </div>
+            <div class="checkbox-opcao">
+              <input type="radio" id="continuar2" name="continuar" value="Talvez, dependendo do tema">
+              <label for="continuar2">Talvez, dependendo do tema</label>
+            </div>
+            <div class="checkbox-opcao">
+              <input type="radio" id="continuar3" name="continuar" value="Não, não tenho interesse">
+              <label for="continuar3">Não, não tenho interesse</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="pergunta">
+          <label class="pergunta-texto">4.4. O que você ainda gostaria de aprender sobre tecnologia e inclusão digital?</label>
+          <textarea name="aprender_mais" rows="3" class="texto-area" placeholder="Digite sua resposta aqui..."></textarea>
+        </div>
+      </section>
+
+      <!-- Seção 5: Feedback Geral -->
+      <section class="secao-formulario">
+        <h3 class="secao-titulo"><span class="numero-secao">5</span> Feedback Geral</h3>
+        
+        <div class="pergunta">
+          <label class="pergunta-texto">5.1. Você recomendaria essa atividade para outras pessoas?</label>
+          <div class="checkbox-opcoes">
+            <div class="checkbox-opcao">
+              <input type="radio" id="recomendar1" name="recomendar" value="Sim" required>
+              <label for="recomendar1">Sim</label>
+            </div>
+            <div class="checkbox-opcao">
+              <input type="radio" id="recomendar2" name="recomendar" value="Não">
+              <label for="recomendar2">Não</label>
+            </div>
+            <div class="checkbox-opcao">
+              <input type="radio" id="recomendar3" name="recomendar" value="Talvez">
+              <label for="recomendar3">Talvez</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="pergunta">
+          <label class="pergunta-texto">5.2. Algum comentário final sobre sua experiência?</label>
+          <textarea name="comentario_final" rows="3" class="texto-area" placeholder="Digite sua resposta aqui..."></textarea>
+        </div>
+      </section>
+
+      <div class="botoes-container">
+        <button type="submit" class="botao-enviar">
+          <span class="botao-icone"><i class="fas fa-paper-plane"></i></span>
+          <span class="botao-texto">ENVIAR AVALIAÇÃO</span>
+        </button>
+      </div>
+    </form>
+
+    <div id="agradecimento" class="agradecimento hidden">
+      <div class="agradecimento-conteudo">
+        <i class="fas fa-check-circle agradecimento-icone"></i>
+        <h2>Obrigado pela sua avaliação!</h2>
+        <p>Suas respostas são muito importantes para melhorarmos nossas atividades.</p>
+        <button id="voltarInicio" class="botao-voltar">Voltar para a página inicial</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
