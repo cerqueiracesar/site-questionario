@@ -73,6 +73,16 @@ ${dadosFormatados}
   }
 })
 
+// Rota do quiz
+app.get("/quiz", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "quiz.html"))
+})
+
+// Rota para a avaliação
+app.get("/avaliacao", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "avaliacao.html"))
+})
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`)
 })
