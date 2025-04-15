@@ -327,6 +327,27 @@
   .feedback-lock-icon {
     animation: pulse-lock 2s infinite;
   }
+
+  .feedback-section.locked .feedback-link button {
+    opacity: 0.6; /* Diminuir a opacidade */
+    cursor: not-allowed; /* Mudar o cursor */
+    /* Outros estilos para indicar bloqueio */
+  }
+
+  .feedback-section.available .feedback-link button {
+      opacity: 1;
+      cursor: pointer;
+      /* Estilos para indicar disponibilidade */
+  }
+
+  .feedback-section.locked .feedback-countdown .feedback-lock-icon {
+      /* Estilos para o ícone de cadeado */
+      display: inline-block;
+  }
+
+  .feedback-section.available .feedback-countdown .feedback-lock-icon {
+      display: inline-block; /* Ou outro estilo para o ícone de desbloqueio */
+  }
   
   @keyframes pulse-lock {
     0% {
