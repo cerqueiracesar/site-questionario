@@ -3,91 +3,536 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulário de Inscrição</title>
-  <link rel="stylesheet" href="retro-style.css" />
+  <title>Formulário de Inscrição - Nova Era Digital</title>
+  <link rel="stylesheet" href="css/landing-style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Estilos específicos para o formulário */
+    body {
+      background-color: #0a0a1a;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(20, 20, 40, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+    
+    h1 {
+      text-align: center;
+      color: #0ff;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    
+    .form-section {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+      padding-bottom: 1rem;
+    }
+    
+    .form-section h3 {
+      color: #0ff;
+      margin-bottom: 1rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      border-radius: 5px;
+      background-color: rgba(10, 10, 30, 0.8);
+      color: #fff;
+      font-size: 1rem;
+    }
+    
+    .radio-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .radio-option {
+      display: flex;
+      align-items: center;
+    }
+    
+    .radio-option input {
+      margin-right: 0.5rem;
+    }
+    
+    .rating-container {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .rating-opcoes {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+    }
+    
+    .rating-opcao {
+      text-align: center;
+    }
+    
+    .rating-opcao input {
+      display: none;
+    }
+    
+    .rating-opcao label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .rating-opcao input:checked + label {
+      background-color: rgba(0, 255, 255, 0.2);
+      color: #0ff;
+    }
+    
+    .rating-label {
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    
+    .btn-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(45deg, #0066ff, #00ffff);
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      margin-top: 2rem;
+    }
+    
+    .btn-submit:hover {
+      background: linear-gradient(45deg, #00ffff, #0066ff);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+      transform: translateY(-2px);
+    }
+    
+    .btn-icon {
+      margin-right: 0.5rem;
+    }
+    
+    /* Modal de confirmação */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      overflow: auto;
+    }
+    
+    .modal-content {
+      background-color: rgba(20, 20, 40, 0.95);
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+      text-align: center;
+    }
+    
+    .confirmacao-icon {
+      font-size: 4rem;
+      color: #0f0;
+      margin-bottom: 1rem;
+    }
+    
+    .confirmacao-detalhes {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background-color: rgba(0, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+    
+    .confirmacao-nota {
+      font-style: italic;
+      color: #0ff;
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn-fechar {
+      padding: 0.75rem 2rem;
+      background: linear-gradient(45deg, #0066ff, #00ffff);
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-fechar:hover {
+      background: linear-gradient(45deg, #00ffff, #0066ff);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Formulário de Inscrição</h1>
-    <form id="questionario">
-      <fieldset>
-        <legend>Seus dados</legend>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required><br />
+    <h1>Inscrição para Nova Era Digital</h1>
+    
+    <form id="inscricaoForm" class="formulario">
+      <div class="form-section">
+        <h3>Dados Pessoais</h3>
         
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required><br />
-      </fieldset>
-   
-      <fieldset>
-        <legend>1.1. Qual a sua idade?</legend>
-        <label><input type="radio" name="idade" value="menos18" /> Menos de 18 anos</label><br />
-        <label><input type="radio" name="idade" value="18a29" /> 18 a 29 anos</label><br />
-        <label><input type="radio" name="idade" value="30a45" /> 30 a 45 anos</label><br />
-        <label><input type="radio" name="idade" value="46a60" /> 46 a 60 anos</label><br />
-        <label><input type="radio" name="idade" value="mais60" /> Mais de 60 anos</label>
-      </fieldset>
-
-      <fieldset>
-        <legend>1.2. Qual o seu nível de escolaridade?</legend>
-        <label><input type="radio" name="escolaridade" value="fundincomp" /> Ensino fundamental incompleto</label><br />
-        <label><input type="radio" name="escolaridade" value="fundcompl" /> Ensino fundamental completo</label><br />
-        <label><input type="radio" name="escolaridade" value="medincomp" /> Ensino médio incompleto</label><br />
-        <label><input type="radio" name="escolaridade" value="medcompl" /> Ensino médio completo</label><br />
-        <label><input type="radio" name="escolaridade" value="supincomp" /> Ensino superior incompleto</label><br />
-        <label><input type="radio" name="escolaridade" value="supcompl" /> Ensino superior completo</label>
-      </fieldset>
-
-      <fieldset>
-        <legend>1.3. Você possui acesso regular a dispositivos digitais?</legend>
-        <label><input type="radio" name="acesso" value="pc_cel" /> Sim, computador e celular</label><br />
-        <label><input type="radio" name="acesso" value="cel" /> Sim, apenas celular</label><br />
-        <label><input type="radio" name="acesso" value="pc" /> Sim, apenas computador</label><br />
-        <label><input type="radio" name="acesso" value="nao" /> Não tenho acesso regular</label>
-      </fieldset>
-
-      <fieldset>
-        <legend>2.1. Com que frequência você utiliza a internet?</legend>
-        <label><input type="radio" name="frequencia" value="todo_dia" /> Todos os dias</label><br />
-        <label><input type="radio" name="frequencia" value="algumas_sem" /> Algumas vezes por semana</label><br />
-        <label><input type="radio" name="frequencia" value="algumas_mes" /> Algumas vezes por mês</label><br />
-        <label><input type="radio" name="frequencia" value="raro" /> Raramente</label><br />
-        <label><input type="radio" name="frequencia" value="nunca" /> Nunca</label>
-      </fieldset>
-
-      <fieldset>
-        <legend>2.2. Quais dessas ferramentas digitais você já utiliza?</legend>
-        <label><input type="checkbox" name="ferramentas" value="redes" /> Redes sociais</label><br />
-        <label><input type="checkbox" name="ferramentas" value="email" /> E-mail</label><br />
-        <label><input type="checkbox" name="ferramentas" value="mensagem" /> Aplicativos de mensagem</label><br />
-        <label><input type="checkbox" name="ferramentas" value="produtividade" /> Ferramentas de produtividade</label><br />
-        <label><input type="checkbox" name="ferramentas" value="banco" /> Serviços bancários online</label><br />
-        <label><input type="checkbox" name="ferramentas" value="nenhuma" /> Nenhuma das opções</label>
-      </fieldset>
-
-      <fieldset>
-        <legend>2.3. Como você avalia seu conhecimento sobre tecnologia digital?</legend>
-        <label><input type="radio" name="avaliacao" value="1" /> 1</label>
-        <label><input type="radio" name="avaliacao" value="2" /> 2</label>
-        <label><input type="radio" name="avaliacao" value="3" /> 3</label>
-        <label><input type="radio" name="avaliacao" value="4" /> 4</label>
-        <label><input type="radio" name="avaliacao" value="5" /> 5</label>
-      </fieldset>
-
-      <fieldset>
-        <legend>2.4. Você já ouviu falar sobre Inteligência Artificial (IA)?</legend>
-        <label><input type="radio" name="ia" value="entendo" /> Sim, e entendo como funciona</label><br />
-        <label><input type="radio" name="ia" value="pouco" /> Sim, mas sei pouco sobre o assunto</label><br />
-        <label><input type="radio" name="ia" value="nao" /> Não</label>
-      </fieldset>
-
-      <fieldset>
-        <legend>2.5. O que você espera aprender com esta atividade?</legend>
-        <textarea name="expectativas" rows="4" cols="50" placeholder="Digite aqui..."></textarea>
-      </fieldset>
-
-      <button type="submit">Enviar</button>
+        <div class="form-group">
+          <label for="nome">Nome completo:</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <h3>Sobre Você</h3>
+        
+        <div class="form-group">
+          <label>Qual a sua idade?</label>
+          <div class="radio-options">
+            <div class="radio-option">
+              <input type="radio" id="idade1" name="idade" value="Menos de 18 anos">
+              <label for="idade1">Menos de 18 anos</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="idade2" name="idade" value="18 a 29 anos">
+              <label for="idade2">18 a 29 anos</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="idade3" name="idade" value="30 a 45 anos">
+              <label for="idade3">30 a 45 anos</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="idade4" name="idade" value="46 a 60 anos">
+              <label for="idade4">46 a 60 anos</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="idade5" name="idade" value="Mais de 60 anos">
+              <label for="idade5">Mais de 60 anos</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Qual o seu nível de escolaridade?</label>
+          <div class="radio-options">
+            <div class="radio-option">
+              <input type="radio" id="escolaridade1" name="escolaridade" value="Ensino fundamental incompleto">
+              <label for="escolaridade1">Ensino fundamental incompleto</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="escolaridade2" name="escolaridade" value="Ensino fundamental completo">
+              <label for="escolaridade2">Ensino fundamental completo</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="escolaridade3" name="escolaridade" value="Ensino médio incompleto">
+              <label for="escolaridade3">Ensino médio incompleto</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="escolaridade4" name="escolaridade" value="Ensino médio completo">
+              <label for="escolaridade4">Ensino médio completo</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="escolaridade5" name="escolaridade" value="Ensino superior incompleto">
+              <label for="escolaridade5">Ensino superior incompleto</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="escolaridade6" name="escolaridade" value="Ensino superior completo">
+              <label for="escolaridade6">Ensino superior completo</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Você possui acesso regular a dispositivos digitais?</label>
+          <div class="radio-options">
+            <div class="radio-option">
+              <input type="radio" id="acesso1" name="acesso_digital" value="Sim, computador e celular">
+              <label for="acesso1">Sim, computador e celular</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="acesso2" name="acesso_digital" value="Sim, apenas celular">
+              <label for="acesso2">Sim, apenas celular</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="acesso3" name="acesso_digital" value="Sim, apenas computador">
+              <label for="acesso3">Sim, apenas computador</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="acesso4" name="acesso_digital" value="Não tenho acesso regular">
+              <label for="acesso4">Não tenho acesso regular</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Com que frequência você utiliza a internet?</label>
+          <div class="radio-options">
+            <div class="radio-option">
+              <input type="radio" id="internet1" name="uso_internet" value="Todos os dias">
+              <label for="internet1">Todos os dias</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="internet2" name="uso_internet" value="Algumas vezes por semana">
+              <label for="internet2">Algumas vezes por semana</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="internet3" name="uso_internet" value="Algumas vezes por mês">
+              <label for="internet3">Algumas vezes por mês</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="internet4" name="uso_internet" value="Raramente">
+              <label for="internet4">Raramente</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="internet5" name="uso_internet" value="Nunca">
+              <label for="internet5">Nunca</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Quais dessas ferramentas digitais você já utiliza?</label>
+          <div class="radio-options">
+            <div class="radio-option">
+              <input type="checkbox" id="ferramenta1" name="ferramentas" value="Redes sociais">
+              <label for="ferramenta1">Redes sociais</label>
+            </div>
+            <div class="radio-option">
+              <input type="checkbox" id="ferramenta2" name="ferramentas" value="E-mail">
+              <label for="ferramenta2">E-mail</label>
+            </div>
+            <div class="radio-option">
+              <input type="checkbox" id="ferramenta3" name="ferramentas" value="Aplicativos de mensagem">
+              <label for="ferramenta3">Aplicativos de mensagem</label>
+            </div>
+            <div class="radio-option">
+              <input type="checkbox" id="ferramenta4" name="ferramentas" value="Ferramentas de produtividade">
+              <label for="ferramenta4">Ferramentas de produtividade</label>
+            </div>
+            <div class="radio-option">
+              <input type="checkbox" id="ferramenta5" name="ferramentas" value="Serviços bancários online">
+              <label for="ferramenta5">Serviços bancários online</label>
+            </div>
+            <div class="radio-option">
+              <input type="checkbox" id="ferramenta6" name="ferramentas" value="Nenhuma das opções">
+              <label for="ferramenta6">Nenhuma das opções</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Como você avalia seu conhecimento sobre tecnologia digital?</label>
+          <div class="rating-container">
+            <div class="rating-opcoes">
+              <div class="rating-opcao">
+                <input type="radio" id="conhecimento1" name="conhecimento_tecnologia" value="1">
+                <label for="conhecimento1">1<span class="rating-label">Muito baixo</span></label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="conhecimento2" name="conhecimento_tecnologia" value="2">
+                <label for="conhecimento2">2</label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="conhecimento3" name="conhecimento_tecnologia" value="3">
+                <label for="conhecimento3">3</label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="conhecimento4" name="conhecimento_tecnologia" value="4">
+                <label for="conhecimento4">4</label>
+              </div>
+              <div class="rating-opcao">
+                <input type="radio" id="conhecimento5" name="conhecimento_tecnologia" value="5">
+                <label for="conhecimento5">5<span class="rating-label">Muito alto</span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Você já ouviu falar sobre Inteligência Artificial (IA)?</label>
+          <div class="radio-options">
+            <div class="radio-option">
+              <input type="radio" id="ia1" name="conhecimento_ia" value="Sim, e entendo como funciona">
+              <label for="ia1">Sim, e entendo como funciona</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="ia2" name="conhecimento_ia" value="Sim, mas sei pouco sobre o assunto">
+              <label for="ia2">Sim, mas sei pouco sobre o assunto</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="ia3" name="conhecimento_ia" value="Não">
+              <label for="ia3">Não</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="expectativa">O que você espera aprender com esta atividade?</label>
+          <textarea id="expectativa" name="expectativa" rows="3"></textarea>
+        </div>
+      </div>
+      
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">
+          <span class="btn-icon"><i class="fas fa-check-circle"></i></span>
+          <span class="btn-text">CONFIRMAR INSCRIÇÃO</span>
+        </button>
+      </div>
     </form>
   </div>
+
+  <!-- Modal de confirmação -->
+  <div id="confirmacaoModal" class="modal">
+    <div class="modal-content confirmacao-content">
+      <div class="confirmacao-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h2>Inscrição Confirmada!</h2>
+      <p>Sua vaga está garantida para a aula <strong>Nova Era Digital</strong>.</p>
+      <p class="confirmacao-detalhes">
+        <strong>Data:</strong> 25 de abril de 2025<br>
+        <strong>Horário:</strong> 18h<br>
+        <strong>Plataforma:</strong> Zoom
+      </p>
+      <p>Enviamos um e-mail com todas as informações e o link de acesso.</p>
+      <p class="confirmacao-nota">Não esqueça de verificar sua caixa de spam!</p>
+      <button id="btnFecharConfirmacao" class="btn-fechar">ENTENDI</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const inscricaoForm = document.getElementById("inscricaoForm");
+      const confirmacaoModal = document.getElementById("confirmacaoModal");
+      const btnFecharConfirmacao = document.getElementById("btnFecharConfirmacao");
+      
+      // Enviar formulário de inscrição
+      inscricaoForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        // Coletar dados do formulário
+        const formData = new FormData(inscricaoForm);
+        const dadosInscricao = {};
+        const ferramentas = [];
+        
+        for (const [key, value] of formData.entries()) {
+          if (key === "ferramentas") {
+            ferramentas.push(value);
+          } else {
+            dadosInscricao[key] = value;
+          }
+        }
+        
+        // Adicionar array de ferramentas ao objeto de dados
+        if (ferramentas.length > 0) {
+          dadosInscricao.ferramentas = ferramentas;
+        }
+        
+        // Salvar dados no localStorage para uso futuro
+        localStorage.setItem("dadosInscricao", JSON.stringify(dadosInscricao));
+        
+        // Enviar dados para o servidor via fetch
+        fetch("/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nome: dadosInscricao.nome,
+            email: dadosInscricao.email,
+            mensagem: JSON.stringify(dadosInscricao), // Enviando todos os dados do formulário
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Sucesso:", data);
+            // Mostrar modal de confirmação
+            confirmacaoModal.style.display = "block";
+            document.body.style.overflow = "hidden";
+            
+            // Limpar formulário
+            inscricaoForm.reset();
+          })
+          .catch((error) => {
+            console.error("Erro ao enviar email:", error);
+            alert("Ocorreu um erro ao enviar seus dados. Por favor, tente novamente.");
+          });
+      });
+      
+      // Fechar modal de confirmação com o botão
+      btnFecharConfirmacao.addEventListener("click", () => {
+        confirmacaoModal.style.display = "none";
+        document.body.style.overflow = "auto";
+        // Redirecionar para a página inicial
+        window.location.href = "index.html";
+      });
+      
+      // Fechar modal ao clicar fora dele
+      window.addEventListener("click", (e) => {
+        if (e.target === confirmacaoModal) {
+          confirmacaoModal.style.display = "none";
+          document.body.style.overflow = "auto";
+          // Redirecionar para a página inicial
+          window.location.href = "index.html";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
