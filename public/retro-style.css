@@ -339,14 +339,20 @@
     margin-bottom: 20px;
     font-size: 22px;
     text-shadow: 1px 1px #000;
+    background: rgba(255, 0, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #ff00ff;
   }
   
   .pergunta-imagem {
     max-width: 100%;
     height: auto;
-    margin: 15px 0;
+    margin: 15px auto;
     border: 2px solid #ff00ff;
     border-radius: 8px;
+    display: block;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
   }
   
   .opcoes {
@@ -370,10 +376,35 @@
   .opcao:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateX(5px);
+    border-left: 3px solid #00ffff;
   }
   
-  .opcao input {
+  .opcao input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00ffff;
+    border-radius: 50%;
     margin-right: 15px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+  }
+  
+  .opcao input[type="radio"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #ff00ff;
+    background-color: #ff00ff;
+  }
+  
+  .opcao input[type="radio"]:checked::before {
+    transform: scale(1);
   }
   
   .opcao label {
@@ -385,11 +416,37 @@
   .opcao.correta {
     background: rgba(0, 255, 0, 0.2);
     border: 1px solid #00ff00;
+    animation: pulse-green 1s;
   }
   
   .opcao.incorreta {
     background: rgba(255, 0, 0, 0.2);
     border: 1px solid #ff0000;
+    animation: pulse-red 1s;
+  }
+  
+  @keyframes pulse-green {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+    }
+  }
+  
+  @keyframes pulse-red {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
   }
   
   .feedback {
@@ -404,18 +461,32 @@
     display: block;
     background: rgba(0, 255, 0, 0.1);
     border-left: 4px solid #00ff00;
+    animation: fade-in 0.5s;
   }
   
   .feedback.incorreto {
     display: block;
     background: rgba(255, 0, 0, 0.1);
     border-left: 4px solid #ff0000;
+    animation: fade-in 0.5s;
   }
   
   .feedback.erro {
     display: block;
     background: rgba(255, 255, 0, 0.1);
     border-left: 4px solid #ffff00;
+    animation: fade-in 0.5s;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   .botao-responder {
@@ -429,11 +500,17 @@
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   
   .botao-responder:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+  }
+  
+  .botao-responder:active {
+    transform: scale(0.98);
   }
   
   .botao-voltar {
@@ -453,6 +530,7 @@
   .botao-voltar:hover {
     background: rgba(255, 0, 255, 0.2);
     color: #00ffff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
   }
   
   .loading {
@@ -508,6 +586,7 @@
     border-radius: 10px;
     overflow: hidden;
     margin: 15px 0;
+    border: 1px solid #ff00ff;
   }
   
   .pontuacao-progresso {
@@ -515,12 +594,14 @@
     background: linear-gradient(90deg, #ff00ff, #00ffff);
     border-radius: 10px;
     transition: width 1s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
   }
   
   .pontuacao-percentual {
     font-size: 24px;
     font-weight: bold;
     color: #00ffff;
+    text-shadow: 1px 1px #ff00ff;
   }
   
   .mensagem-final {
@@ -528,6 +609,17 @@
     padding: 15px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+    border: 1px dashed #00ffff;
+    animation: glow 2s infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    }
+    to {
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    }
   }
   
   .botao-reiniciar {
@@ -541,6 +633,8 @@
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   
   .botao-reiniciar:hover {
@@ -550,5 +644,241 @@
   
   .hidden {
     display: none;
+  }
+  
+  /* Estilos adicionais para melhorar a experiência do quiz */
+  .quiz-container {
+    transition: all 0.5s ease;
+  }
+  
+  .pergunta {
+    animation: slide-in 0.5s ease;
+  }
+  
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Estilo para dispositivos móveis */
+  @media (max-width: 600px) {
+    .quiz-container {
+      padding: 15px;
+    }
+  
+    .quiz-container-titulo {
+      font-size: 24px;
+    }
+  
+    .pergunta h3 {
+      font-size: 18px;
+    }
+  
+    .opcao {
+      padding: 10px;
+    }
+  
+    .opcao label {
+      font-size: 16px;
+    }
+  
+    .botao-responder,
+    .botao-reiniciar {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+  }
+  
+  /* Estilos para a seção de feedback */
+  .feedback-section {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    border: 2px dashed #ff00ff;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Estilo para quando o feedback está bloqueado */
+  .feedback-section.locked {
+    filter: grayscale(70%);
+  }
+  
+  .feedback-section.locked::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1) 10px,
+      rgba(0, 0, 0, 0.2) 10px,
+      rgba(0, 0, 0, 0.2) 20px
+    );
+    z-index: 1;
+  }
+  
+  .feedback-countdown {
+    margin-bottom: 15px;
+    color: #ff00ff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .feedback-lock-icon {
+    font-size: 20px;
+    animation: pulse-lock 2s infinite;
+  }
+  
+  @keyframes pulse-lock {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+  }
+  
+  .feedback-countdown-text {
+    font-weight: bold;
+  }
+  
+  #countdownTimer {
+    font-family: monospace;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-left: 5px;
+    color: #00ffff;
+  }
+  
+  .feedback-link {
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .feedback-button {
+    background: linear-gradient(145deg, #00ffff, #ff00ff);
+    color: black;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), inset 0 0 5px rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .feedback-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(100%);
+  }
+  
+  .feedback-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 255, 0.3), transparent);
+    transition: 0.5s;
+  }
+  
+  .feedback-button:not(:disabled):hover {
+    background-color: #000;
+    color: #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.8), inset 0 0 10px rgba(255, 0, 255, 0.4);
+    text-shadow: 0 0 5px #ff00ff;
+  }
+  
+  .feedback-button:not(:disabled):hover::before {
+    left: 100%;
+  }
+  
+  .feedback-icon {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .feedback-text {
+    letter-spacing: 1px;
+  }
+  
+  /* Estilo para quando o feedback está disponível */
+  .feedback-section.available {
+    border: 2px solid #00ffff;
+    animation: glow-border 2s infinite alternate;
+  }
+  
+  @keyframes glow-border {
+    from {
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.5), inset 0 0 5px rgba(0, 255, 255, 0.2);
+    }
+    to {
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), inset 0 0 10px rgba(0, 255, 255, 0.4);
+    }
+  }
+  
+  /* Animação para quando o feedback se torna disponível */
+  @keyframes unlock-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .feedback-section.unlocking {
+    animation: unlock-animation 0.5s ease;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 600px) {
+    .feedback-button {
+      font-size: 16px;
+      padding: 8px 20px;
+      width: 100%;
+    }
+  
+    .feedback-countdown {
+      font-size: 16px;
+      flex-direction: column;
+    }
   }
   

@@ -1,0 +1,321 @@
+/* Estilos específicos para a página de quiz */
+.quiz-page {
+    min-height: 80vh;
+  }
+  
+  .quiz-container {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 20px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: #00ffff;
+  }
+  
+  .loading i {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .pergunta {
+    margin-bottom: 30px;
+    animation: slide-in 0.5s ease;
+  }
+  
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .pergunta-numero {
+    color: #ff00ff;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: right;
+  }
+  
+  .pergunta h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-shadow: 1px 1px #000;
+    background: rgba(255, 0, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #ff00ff;
+  }
+  
+  .pergunta-imagem {
+    max-width: 100%;
+    height: auto;
+    margin: 15px auto;
+    border: 2px solid #ff00ff;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  }
+  
+  .opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .opcao {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+  
+  .opcao:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+    border-left: 3px solid #00ffff;
+  }
+  
+  .opcao input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00ffff;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+  }
+  
+  .opcao input[type="radio"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #ff00ff;
+    background-color: #ff00ff;
+  }
+  
+  .opcao input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+  
+  .opcao label {
+    cursor: pointer;
+    font-size: 18px;
+    flex: 1;
+  }
+  
+  .opcao.correta {
+    background: rgba(0, 255, 0, 0.2);
+    border: 1px solid #00ff00;
+    animation: pulse-green 1s;
+  }
+  
+  .opcao.incorreta {
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid #ff0000;
+    animation: pulse-red 1s;
+  }
+  
+  @keyframes pulse-green {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+    }
+  }
+  
+  @keyframes pulse-red {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+  }
+  
+  .feedback {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    font-size: 18px;
+    display: none;
+  }
+  
+  .feedback.correto {
+    display: block;
+    background: rgba(0, 255, 0, 0.1);
+    border-left: 4px solid #00ff00;
+    animation: fade-in 0.5s;
+  }
+  
+  .feedback.incorreto {
+    display: block;
+    background: rgba(255, 0, 0, 0.1);
+    border-left: 4px solid #ff0000;
+    animation: fade-in 0.5s;
+  }
+  
+  .feedback.erro {
+    display: block;
+    background: rgba(255, 255, 0, 0.1);
+    border-left: 4px solid #ffff00;
+    animation: fade-in 0.5s;
+  }
+  
+  .botao-responder {
+    background: linear-gradient(145deg, #ff00ff, #00ffff);
+    color: black;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .botao-responder:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+  }
+  
+  .botao-responder:active {
+    transform: scale(0.98);
+  }
+  
+  .resultado-final {
+    text-align: center;
+  }
+  
+  .resultado-final h2 {
+    color: #00ffff;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-shadow: 2px 2px #ff00ff;
+  }
+  
+  .pontuacao {
+    margin: 30px 0;
+  }
+  
+  .pontuacao p {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .pontuacao-barra {
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+    border: 1px solid #ff00ff;
+  }
+  
+  .pontuacao-progresso {
+    height: 100%;
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  
+  .pontuacao-percentual {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 1px 1px #ff00ff;
+  }
+  
+  .mensagem-final {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px dashed #00ffff;
+    animation: glow 2s infinite alternate;
+  }
+  
+  .botoes-navegacao {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .btn-voltar {
+    background: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    border: 1px solid #ff00ff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  
+  .btn-voltar:hover {
+    background: rgba(255, 0, 255, 0.2);
+    color: #00ffff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 600px) {
+    .quiz-container {
+      padding: 15px;
+    }
+  
+    .pergunta h3 {
+      font-size: 18px;
+    }
+  
+    .opcao {
+      padding: 10px;
+    }
+  
+    .opcao label {
+      font-size: 16px;
+    }
+  
+    .botao-responder {
+      font-size: 16px;
+      padding: 10px 20px;
+      width: 100%;
+    }
+  }
+  
