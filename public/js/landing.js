@@ -67,7 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
             feedbackButton.disabled = true;
             feedbackCountdown.innerHTML =
                 '<i class="fas fa-lock feedback-lock-icon"></i> <span class="feedback-countdown-text">Disponível em: <span id="countdownTimer"></span></span>';
-            atualizarContador(); // Chamar para exibir o contador imediatamente
+            atualizarContador(); // Garante que o contador seja chamado imediatamente
+            if (!intervalId) { // Inicia o intervalo se ainda não estiver ativo
+                intervalId = setInterval(atualizarContador, 1000);
+            }
         }
     }
 
@@ -97,9 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Inicializar a interface e o contador
     atualizarFeedbackUI();
-    if (feedbackSection.classList.contains("locked")) {
-        intervalId = setInterval(atualizarContador, 1000);
-    }
 
     // Adicionar evento de clique ao botão de feedback
     feedbackLink.addEventListener("click", (e) => {
