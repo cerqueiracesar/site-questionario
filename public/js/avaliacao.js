@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const formulario = document.getElementById("avaliacaoForm");
   const agradecimento = document.getElementById("agradecimento");
   const botaoVoltar = document.getElementById("voltarInicio");
-  const submitButton = document.getElementById("submitButton");
 
   // Adicionar efeitos visuais às opções de avaliação
   const ratingOpcoes = document.querySelectorAll(".rating-opcao input");
@@ -90,12 +89,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mostrar tela de agradecimento
   formulario.classList.add("hidden");
   agradecimento.classList.remove("hidden");
-  })
-  .catch(error => {
-  console.error("Erro ao enviar email:", error);
-  alert("Ocorreu um erro ao enviar sua avaliação. Por favor, tente novamente.");
-  });
-  });
+
+  // Redirecionar para a página inicial após 5 segundos (opcional)
+  setTimeout(() => {
+    window.location.href = "index.html";
+    }, 5000);
+    })
+    .catch(error => {
+    console.error("Erro ao enviar email:", error);
+    alert("Ocorreu um erro ao enviar sua avaliação. Por favor, tente novamente.");
+    });
+    });
 
   // Botão para voltar à página inicial
   botaoVoltar.addEventListener("click", () => {
