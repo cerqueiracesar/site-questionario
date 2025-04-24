@@ -74,7 +74,7 @@ ${dadosFormatados}
 })
 
 app.post("/send-email-avaliacao", async (req, res) => {
-  const mensagem = req.body.mensagem; // Alterado para pegar apenas a mensagem
+  const mensagem = req.body.mensagem;
 
   const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -84,13 +84,25 @@ app.post("/send-email-avaliacao", async (req, res) => {
   },
   });
 
+  let dadosFormatados = "";
+  try {
+  const dadosAvaliacao = JSON.parse(mensagem);
+
+  for (const [chave, valor] of Object.entries(dadosAvaliacao)) {
+  dadosFormatados += `${chave}: ${valor}\n`;
+  }
+  } catch (error) {
+  dadosFormatados = mensagem; // Se não for JSON, usa a mensagem original
+  console.error("Erro ao formatar dados da avaliação:", error);
+  }
+
   const mailOptions = {
   from: process.env.EMAIL_USER,
-  to: "juremapreta.ia@gmail.com", // Mesmo email ou outro, se desejar
+  to: "juremapreta.ia@gmail.com",
   subject: "Nova Avaliação: Nova Era Digital",
   text: `
   Dados da Avaliação:
-  ${mensagem}
+  ${dadosFormatados}
   `,
   };
 
