@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Configuração da data de liberação do feedback
     // Formato: ano, mês (0-11), dia, hora, minuto, segundo
     // IMPORTANTE: Altere esta data para quando o feedback deve ser liberado
-    const dataLiberacao = new Date(2025, 3, 25, 19, 30, 0) // 25 de abril de 2025 às 19:30
+    const dataLiberacao = new Date(2025, 3, 23, 19, 30, 0) // 23 de abril de 2025 às 19:30
   
     // Elementos do DOM
     const feedbackSection = document.getElementById("feedbackSection")

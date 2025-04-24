@@ -73,6 +73,36 @@ ${dadosFormatados}
   }
 })
 
+app.post("/send-email-avaliacao", async (req, res) => {
+  const mensagem = req.body.mensagem; // Alterado para pegar apenas a mensagem
+
+  const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+  user: process.env.EMAIL_USER,
+  pass: process.env.EMAIL_PASS,
+  },
+  });
+
+  const mailOptions = {
+  from: process.env.EMAIL_USER,
+  to: "juremapreta.ia@gmail.com", // Mesmo email ou outro, se desejar
+  subject: "Nova Avaliação: Nova Era Digital",
+  text: `
+  Dados da Avaliação:
+  ${mensagem}
+  `,
+  };
+
+  try {
+  await transporter.sendMail(mailOptions);
+  res.status(200).json({ message: "Email de avaliação enviado com sucesso!" });
+  } catch (error) {
+  console.error("Erro ao enviar email de avaliação:", error);
+  res.status(500).json({ error: "Erro ao enviar email de avaliação", details: error.message });
+  }
+ });
+
 // Rota do quiz
 app.get("/quiz", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "quiz.html"))
