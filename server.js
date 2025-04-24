@@ -74,7 +74,7 @@ ${dadosFormatados}
 })
 
 app.post("/send-email-avaliacao", async (req, res) => {
-  const mensagem = req.body.mensagem;
+  const { nome, email, mensagem } = req.body;
 
   const transporter = nodemailer.createTransport({
   service: "gmail",

@@ -48,11 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
   formulario.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  // Coletar dados do formulário
   const formData = new FormData(formulario);
-  const respostas = {};
+  const respostas = {
+  nome: formData.get("nome"), // Coletar nome
+  email: formData.get("email"), // Coletar email
+  };
 
   for (const [key, value] of formData.entries()) {
-  respostas[key] = value;
+    if (key !== "nome" && key !== "email") { // Evitar duplicação
+    respostas[key] = value;
+    }
   }
 
   // Enviar dados para o servidor via fetch
@@ -62,6 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
   "Content-Type": "application/json",
   },
   body: JSON.stringify({
+  nome: respostas.nome, // Enviar nome
+  email: respostas.email, // Enviar email
   mensagem: JSON.stringify(respostas), // Enviando todas as respostas
   }),
   })
