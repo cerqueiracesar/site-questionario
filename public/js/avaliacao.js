@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.getElementById("avaliacaoForm")
     const agradecimento = document.getElementById("agradecimento")
     const botaoVoltar = document.getElementById("voltarInicio")
-  
+    const submitButton = document.getElementById("submitButton")
+
     // Adicionar efeitos visuais às opções de avaliação
     const ratingOpcoes = document.querySelectorAll(".rating-opcao input")
     ratingOpcoes.forEach((opcao) => {
@@ -95,5 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
         300 * (index + 1),
       )
     })
-  })
-  
+     // Lógica do feedback (semelhante ao feedback.js)
+     const feedbackDisponivel = localStorage.getItem("feedbackDisponivel") === "true";
+
+     // Impede que a avaliação seja acessada até que esteja disponível
+     if (!feedbackDisponivel) {
+       window.location.href = "index.html";  // Redireciona para a página inicial
+     }
+   })
